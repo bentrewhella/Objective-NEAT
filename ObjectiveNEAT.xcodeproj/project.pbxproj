@@ -8,8 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		D10B1D4B14825D2D00E7BCB0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D10B1D4A14825D2D00E7BCB0 /* Foundation.framework */; };
-		D10B1D4E14825D2D00E7BCB0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D10B1D4D14825D2D00E7BCB0 /* main.m */; };
+		D10B1D4E14825D2D00E7BCB0 /* ONmain.m in Sources */ = {isa = PBXBuildFile; fileRef = D10B1D4D14825D2D00E7BCB0 /* ONmain.m */; };
 		D10B1D5214825D2D00E7BCB0 /* ObjectiveNEAT.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = D10B1D5114825D2D00E7BCB0 /* ObjectiveNEAT.1 */; };
+		D10B1D5A1482602400E7BCB0 /* ONNNode.m in Sources */ = {isa = PBXBuildFile; fileRef = D10B1D591482602400E7BCB0 /* ONNNode.m */; };
+		D10B1D6114826A9500E7BCB0 /* ONLink.m in Sources */ = {isa = PBXBuildFile; fileRef = D10B1D6014826A9500E7BCB0 /* ONLink.m */; };
+		D10B1D6414826EB400E7BCB0 /* ONGene.m in Sources */ = {isa = PBXBuildFile; fileRef = D10B1D6314826EB400E7BCB0 /* ONGene.m */; };
+		D10B1D67148276DC00E7BCB0 /* ONGenome.m in Sources */ = {isa = PBXBuildFile; fileRef = D10B1D66148276DC00E7BCB0 /* ONGenome.m */; };
+		D10B1D6E14827C9F00E7BCB0 /* ONNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = D10B1D6D14827C9F00E7BCB0 /* ONNetwork.m */; };
+		D10B1D74148280B100E7BCB0 /* ONParameterController.m in Sources */ = {isa = PBXBuildFile; fileRef = D10B1D73148280B100E7BCB0 /* ONParameterController.m */; };
+		D10B1D7E1482F04300E7BCB0 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D10B1D7D1482F04300E7BCB0 /* SenTestingKit.framework */; };
+		D10B1D801482F04300E7BCB0 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D10B1D7F1482F04300E7BCB0 /* Cocoa.framework */; };
+		D10B1D8A1482F04300E7BCB0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D10B1D881482F04300E7BCB0 /* InfoPlist.strings */; };
+		D10B1D8D1482F04300E7BCB0 /* ONUnitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D10B1D8C1482F04300E7BCB0 /* ONUnitTests.m */; };
+		D10B1D991482FE8100E7BCB0 /* ONParameterController.m in Sources */ = {isa = PBXBuildFile; fileRef = D10B1D73148280B100E7BCB0 /* ONParameterController.m */; };
+		D10B1D9E1483B27000E7BCB0 /* ONNNode.m in Sources */ = {isa = PBXBuildFile; fileRef = D10B1D591482602400E7BCB0 /* ONNNode.m */; };
+		D10B1D9F1483B27000E7BCB0 /* ONLink.m in Sources */ = {isa = PBXBuildFile; fileRef = D10B1D6014826A9500E7BCB0 /* ONLink.m */; };
+		D10B1DA01483B27000E7BCB0 /* ONGene.m in Sources */ = {isa = PBXBuildFile; fileRef = D10B1D6314826EB400E7BCB0 /* ONGene.m */; };
+		D10B1DA11483B27000E7BCB0 /* ONGenome.m in Sources */ = {isa = PBXBuildFile; fileRef = D10B1D66148276DC00E7BCB0 /* ONGenome.m */; };
+		D10B1DA51483C16B00E7BCB0 /* ONExperiment.m in Sources */ = {isa = PBXBuildFile; fileRef = D10B1DA41483C16A00E7BCB0 /* ONExperiment.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,9 +44,36 @@
 /* Begin PBXFileReference section */
 		D10B1D4614825D2D00E7BCB0 /* ObjectiveNEAT */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ObjectiveNEAT; sourceTree = BUILT_PRODUCTS_DIR; };
 		D10B1D4A14825D2D00E7BCB0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		D10B1D4D14825D2D00E7BCB0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		D10B1D5014825D2D00E7BCB0 /* ObjectiveNEAT-Prefix.pch */ = {isa = PBXFileReference; path = "ObjectiveNEAT-Prefix.pch"; sourceTree = "<group>"; };
+		D10B1D4D14825D2D00E7BCB0 /* ONmain.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ONmain.m; sourceTree = "<group>"; };
+		D10B1D5014825D2D00E7BCB0 /* ObjectiveNEAT-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ObjectiveNEAT-Prefix.pch"; sourceTree = "<group>"; };
 		D10B1D5114825D2D00E7BCB0 /* ObjectiveNEAT.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = ObjectiveNEAT.1; sourceTree = "<group>"; };
+		D10B1D581482602400E7BCB0 /* ONNNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ONNNode.h; sourceTree = "<group>"; };
+		D10B1D591482602400E7BCB0 /* ONNNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ONNNode.m; sourceTree = "<group>"; };
+		D10B1D5F14826A9500E7BCB0 /* ONLink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ONLink.h; sourceTree = "<group>"; };
+		D10B1D6014826A9500E7BCB0 /* ONLink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ONLink.m; sourceTree = "<group>"; };
+		D10B1D6214826EB400E7BCB0 /* ONGene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ONGene.h; sourceTree = "<group>"; };
+		D10B1D6314826EB400E7BCB0 /* ONGene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ONGene.m; sourceTree = "<group>"; };
+		D10B1D65148276DC00E7BCB0 /* ONGenome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ONGenome.h; sourceTree = "<group>"; };
+		D10B1D66148276DC00E7BCB0 /* ONGenome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ONGenome.m; sourceTree = "<group>"; };
+		D10B1D6C14827C9F00E7BCB0 /* ONNetwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ONNetwork.h; sourceTree = "<group>"; };
+		D10B1D6D14827C9F00E7BCB0 /* ONNetwork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ONNetwork.m; sourceTree = "<group>"; };
+		D10B1D7114827FA100E7BCB0 /* p2test.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = p2test.plist; sourceTree = "<group>"; };
+		D10B1D72148280B100E7BCB0 /* ONParameterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ONParameterController.h; sourceTree = "<group>"; };
+		D10B1D73148280B100E7BCB0 /* ONParameterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ONParameterController.m; sourceTree = "<group>"; };
+		D10B1D751482EEAF00E7BCB0 /* p2blank.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = p2blank.plist; sourceTree = "<group>"; };
+		D10B1D7C1482F04300E7BCB0 /* ONUnitTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ONUnitTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D10B1D7D1482F04300E7BCB0 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		D10B1D7F1482F04300E7BCB0 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
+		D10B1D821482F04300E7BCB0 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		D10B1D831482F04300E7BCB0 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		D10B1D841482F04300E7BCB0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D10B1D871482F04300E7BCB0 /* ONUnitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ONUnitTests-Info.plist"; sourceTree = "<group>"; };
+		D10B1D891482F04300E7BCB0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D10B1D8B1482F04300E7BCB0 /* ONUnitTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ONUnitTests.h; sourceTree = "<group>"; };
+		D10B1D8C1482F04300E7BCB0 /* ONUnitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ONUnitTests.m; sourceTree = "<group>"; };
+		D10B1D8E1482F04300E7BCB0 /* ONUnitTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ONUnitTests-Prefix.pch"; sourceTree = "<group>"; };
+		D10B1DA31483C16A00E7BCB0 /* ONExperiment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ONExperiment.h; sourceTree = "<group>"; };
+		D10B1DA41483C16A00E7BCB0 /* ONExperiment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ONExperiment.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +85,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D10B1D781482F04300E7BCB0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D10B1D7E1482F04300E7BCB0 /* SenTestingKit.framework in Frameworks */,
+				D10B1D801482F04300E7BCB0 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -49,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				D10B1D4C14825D2D00E7BCB0 /* ObjectiveNEAT */,
+				D10B1D851482F04300E7BCB0 /* ONUnitTests */,
 				D10B1D4914825D2D00E7BCB0 /* Frameworks */,
 				D10B1D4714825D2D00E7BCB0 /* Products */,
 			);
@@ -58,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				D10B1D4614825D2D00E7BCB0 /* ObjectiveNEAT */,
+				D10B1D7C1482F04300E7BCB0 /* ONUnitTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -66,6 +120,9 @@
 			isa = PBXGroup;
 			children = (
 				D10B1D4A14825D2D00E7BCB0 /* Foundation.framework */,
+				D10B1D7D1482F04300E7BCB0 /* SenTestingKit.framework */,
+				D10B1D7F1482F04300E7BCB0 /* Cocoa.framework */,
+				D10B1D811482F04300E7BCB0 /* Other Frameworks */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -73,8 +130,20 @@
 		D10B1D4C14825D2D00E7BCB0 /* ObjectiveNEAT */ = {
 			isa = PBXGroup;
 			children = (
-				D10B1D4D14825D2D00E7BCB0 /* main.m */,
-				D10B1D5114825D2D00E7BCB0 /* ObjectiveNEAT.1 */,
+				D10B1D6F14827EF900E7BCB0 /* Parameter Files */,
+				D10B1D581482602400E7BCB0 /* ONNNode.h */,
+				D10B1D591482602400E7BCB0 /* ONNNode.m */,
+				D10B1D5F14826A9500E7BCB0 /* ONLink.h */,
+				D10B1D6014826A9500E7BCB0 /* ONLink.m */,
+				D10B1D6214826EB400E7BCB0 /* ONGene.h */,
+				D10B1D6314826EB400E7BCB0 /* ONGene.m */,
+				D10B1D65148276DC00E7BCB0 /* ONGenome.h */,
+				D10B1D66148276DC00E7BCB0 /* ONGenome.m */,
+				D10B1D6C14827C9F00E7BCB0 /* ONNetwork.h */,
+				D10B1D6D14827C9F00E7BCB0 /* ONNetwork.m */,
+				D10B1DA31483C16A00E7BCB0 /* ONExperiment.h */,
+				D10B1DA41483C16A00E7BCB0 /* ONExperiment.m */,
+				D10B1D4D14825D2D00E7BCB0 /* ONmain.m */,
 				D10B1D4F14825D2D00E7BCB0 /* Supporting Files */,
 			);
 			path = ObjectiveNEAT;
@@ -83,7 +152,49 @@
 		D10B1D4F14825D2D00E7BCB0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D10B1D5114825D2D00E7BCB0 /* ObjectiveNEAT.1 */,
 				D10B1D5014825D2D00E7BCB0 /* ObjectiveNEAT-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D10B1D6F14827EF900E7BCB0 /* Parameter Files */ = {
+			isa = PBXGroup;
+			children = (
+				D10B1D72148280B100E7BCB0 /* ONParameterController.h */,
+				D10B1D73148280B100E7BCB0 /* ONParameterController.m */,
+				D10B1D7114827FA100E7BCB0 /* p2test.plist */,
+				D10B1D751482EEAF00E7BCB0 /* p2blank.plist */,
+			);
+			name = "Parameter Files";
+			sourceTree = "<group>";
+		};
+		D10B1D811482F04300E7BCB0 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D10B1D821482F04300E7BCB0 /* AppKit.framework */,
+				D10B1D831482F04300E7BCB0 /* CoreData.framework */,
+				D10B1D841482F04300E7BCB0 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		D10B1D851482F04300E7BCB0 /* ONUnitTests */ = {
+			isa = PBXGroup;
+			children = (
+				D10B1D8B1482F04300E7BCB0 /* ONUnitTests.h */,
+				D10B1D8C1482F04300E7BCB0 /* ONUnitTests.m */,
+				D10B1D861482F04300E7BCB0 /* Supporting Files */,
+			);
+			path = ONUnitTests;
+			sourceTree = "<group>";
+		};
+		D10B1D861482F04300E7BCB0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D10B1D871482F04300E7BCB0 /* ONUnitTests-Info.plist */,
+				D10B1D881482F04300E7BCB0 /* InfoPlist.strings */,
+				D10B1D8E1482F04300E7BCB0 /* ONUnitTests-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -108,6 +219,24 @@
 			productReference = D10B1D4614825D2D00E7BCB0 /* ObjectiveNEAT */;
 			productType = "com.apple.product-type.tool";
 		};
+		D10B1D7B1482F04300E7BCB0 /* ONUnitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D10B1D8F1482F04300E7BCB0 /* Build configuration list for PBXNativeTarget "ONUnitTests" */;
+			buildPhases = (
+				D10B1D771482F04300E7BCB0 /* Sources */,
+				D10B1D781482F04300E7BCB0 /* Frameworks */,
+				D10B1D791482F04300E7BCB0 /* Resources */,
+				D10B1D7A1482F04300E7BCB0 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ONUnitTests;
+			productName = ONUnitTests;
+			productReference = D10B1D7C1482F04300E7BCB0 /* ONUnitTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -115,6 +244,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = OpposableIntelligence;
 			};
 			buildConfigurationList = D10B1D4014825D2D00E7BCB0 /* Build configuration list for PBXProject "ObjectiveNEAT" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -129,20 +259,79 @@
 			projectRoot = "";
 			targets = (
 				D10B1D4514825D2D00E7BCB0 /* ObjectiveNEAT */,
+				D10B1D7B1482F04300E7BCB0 /* ONUnitTests */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D10B1D791482F04300E7BCB0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D10B1D8A1482F04300E7BCB0 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D10B1D7A1482F04300E7BCB0 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D10B1D4214825D2D00E7BCB0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D10B1D4E14825D2D00E7BCB0 /* main.m in Sources */,
+				D10B1D4E14825D2D00E7BCB0 /* ONmain.m in Sources */,
+				D10B1D5A1482602400E7BCB0 /* ONNNode.m in Sources */,
+				D10B1D6114826A9500E7BCB0 /* ONLink.m in Sources */,
+				D10B1D6414826EB400E7BCB0 /* ONGene.m in Sources */,
+				D10B1D67148276DC00E7BCB0 /* ONGenome.m in Sources */,
+				D10B1D6E14827C9F00E7BCB0 /* ONNetwork.m in Sources */,
+				D10B1D74148280B100E7BCB0 /* ONParameterController.m in Sources */,
+				D10B1DA51483C16B00E7BCB0 /* ONExperiment.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D10B1D771482F04300E7BCB0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D10B1D9E1483B27000E7BCB0 /* ONNNode.m in Sources */,
+				D10B1D9F1483B27000E7BCB0 /* ONLink.m in Sources */,
+				D10B1DA01483B27000E7BCB0 /* ONGene.m in Sources */,
+				D10B1DA11483B27000E7BCB0 /* ONGenome.m in Sources */,
+				D10B1D991482FE8100E7BCB0 /* ONParameterController.m in Sources */,
+				D10B1D8D1482F04300E7BCB0 /* ONUnitTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		D10B1D881482F04300E7BCB0 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D10B1D891482F04300E7BCB0 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		D10B1D5314825D2D00E7BCB0 /* Debug */ = {
@@ -210,6 +399,30 @@
 			};
 			name = Release;
 		};
+		D10B1D901482F04300E7BCB0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ONUnitTests/ONUnitTests-Prefix.pch";
+				INFOPLIST_FILE = "ONUnitTests/ONUnitTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		D10B1D911482F04300E7BCB0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ONUnitTests/ONUnitTests-Prefix.pch";
+				INFOPLIST_FILE = "ONUnitTests/ONUnitTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -229,6 +442,16 @@
 				D10B1D5714825D2D00E7BCB0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D10B1D8F1482F04300E7BCB0 /* Build configuration list for PBXNativeTarget "ONUnitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D10B1D901482F04300E7BCB0 /* Debug */,
+				D10B1D911482F04300E7BCB0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
