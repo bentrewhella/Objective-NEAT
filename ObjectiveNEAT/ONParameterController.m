@@ -11,6 +11,7 @@
 @implementation ONParameterController 
 
 static double weightMutationPower;
+static int numRuns;
 
 +(Boolean) loadParametersFromPList: (NSString *) filename {
     if (filename == nil) {
@@ -38,11 +39,16 @@ static double weightMutationPower;
     
     // now we have the file - set the parameters 
     weightMutationPower = [(NSNumber *) [temp objectForKey:@"weight_mut_power"] doubleValue];
+    numRuns = [(NSNumber *) [temp objectForKey:@"num_runs"] intValue];
     return TRUE;
 }
 
 +(double) weightMutationPower {
     return weightMutationPower;
+}
+
++(int) numRuns {
+    return numRuns;
 }
 
 

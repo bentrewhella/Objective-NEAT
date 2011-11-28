@@ -32,4 +32,7 @@
 /** Weight mutation power */
 +(double) weightMutationPower;
 
+/** The total number of fresh runs (i.e. developed from base neuron) to be evaluated in the test */
++(int) numRuns;
+
 @end

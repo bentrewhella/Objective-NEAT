@@ -16,13 +16,13 @@
 static int innovationCounter = 0;
 
 
-- (id)initWithInputNode: (ONNNode *) inputNode OutputNode: (ONNNode *) outputNode weight:(double) wght {
+- (id)initGeneFromNode: (ONNNode *) fromNode toNode: (ONNNode *) toNode weight:(double) wght {
     self = [super init];
     if (self) {
         innovationNumber = innovationCounter++;
         enabled = true;
         frozen = false;
-        link = [[ONLink alloc] initWithInputNode:inputNode OutputNode:outputNode weight:wght];
+        link = [[ONLink alloc] initLinkFromNode:fromNode toNode:toNode withWeight:wght];
     }
     return self;
 }

@@ -41,6 +41,6 @@
 /** Initialiser 
  *  Takes an input node, an output node, and a weight
  */
-- (id)initWithInputNode: (ONNNode *) inputNode OutputNode: (ONNNode *) outputNode weight:(double) wght;
+- (id)initGeneFromNode: (ONNNode *) fromNode toNode: (ONNNode *) toNode weight:(double) wght;
 
 @end

@@ -16,19 +16,19 @@
 
 @interface ONLink : NSObject {
     double weight;
-    ONNNode * inNode;
-    ONNNode * outNode;
+    ONNNode * fromNode;
+    ONNNode * toNode;
     Boolean isRecurrent;
 }
 
 /** The weight connection of the link */
 @property double weight;
 
-/** NNode inputing into the link */
-@property (retain) ONNNode * inNode;
+/** NNode inputting into the link */
+@property (retain) ONNNode * fromNode;
 
 /** NNode that the link affects */
-@property (retain) ONNNode * outNode;
+@property (retain) ONNNode * toNode;
 
 /** Is the link recurrent 
  *
@@ -37,6 +37,6 @@
 @property Boolean isRecurrent;
 
 /** Initialiser that takes an input and output node along with a weight */
-- (id)initWithInputNode: (ONNNode *) inputNode OutputNode: (ONNNode *) outputNode weight: (double) wght;
+- (id)initLinkFromNode: (ONNNode *) fNode toNode: (ONNNode *) tNode withWeight: (double) wght;
 
 @end

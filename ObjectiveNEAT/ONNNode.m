@@ -48,7 +48,7 @@ double fsigmoid(double activesum, double slope, double constant) {
 -(void) activate {
     double activeSum = 0.0;
     for (ONLink * nextIncomingLink in inComing) {
-        activeSum += (nextIncomingLink.inNode.activation * nextIncomingLink.weight);
+        activeSum += (nextIncomingLink.fromNode.activation * nextIncomingLink.weight);
     }
     activation = activeSum;//fsigmoid(activeSum, 4.924273, 2.4621365);
 }

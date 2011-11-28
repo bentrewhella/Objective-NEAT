@@ -4,21 +4,7 @@
 <dict>
 	<key>weight_mut_power</key>
 	<real>1</real>
-	<key>recur_prob</key>
-	<real>0.05</real>
-	<key>disjoint_coeff</key>
+	<key>num_runs</key>
 	<integer>1</integer>
-	<key>excess_coeff</key>
-	<integer>1</integer>
-	<key>mutdiff_coeff</key>
-	<integer>7</integer>
-	<key>compat_threshold</key>
-	<real>9</real>
-	<key>age_significance</key>
-	<integer>1</integer>
-	<key>survival_thresh</key>
-	<real>0.4</real>
-	<key>mutate_only_prob</key>
-	<real>0.25</real>
 </dict>
 </plist>

@@ -100,8 +100,8 @@ static int genomeCounter = 0;
     for (int i = 0; i < nInputs + 1 /*bias*/; i++) {
         for (int j = 0; j < nOutputs; j++) {
             ONGene * newGene = [[ONGene alloc] 
-                                initWithInputNode: [newGenome.nodes objectAtIndex:i]
-                                OutputNode: [newGenome.nodes objectAtIndex:nInputs + 1 /*bias*/ + j] 
+                                initGeneFromNode: [newGenome.nodes objectAtIndex:i]
+                                toNode: [newGenome.nodes objectAtIndex:nInputs + 1 /*bias*/ + j] 
                                 weight:((float)rand()/(float)RAND_MAX - (float)rand()/(float)RAND_MAX)];
             [newGenome.genes addObject:newGene];
         }
