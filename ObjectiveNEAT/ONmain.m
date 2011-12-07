@@ -9,7 +9,10 @@
 #import <Foundation/Foundation.h>
 #import "ONParameterController.h"
 #import "ONGenome.h"
-#import "ONExperiment.h"
+#import "ONNetwork.h"
+#import "ONInnovationDB.h"
+
+#import "ONxorExperiment.h"
 
 int main (int argc, const char * argv[])
 {
@@ -18,7 +21,7 @@ int main (int argc, const char * argv[])
         
         // set up random number generator for repeatability (or not)
         //srand ((uint) time(NULL));
-        srand (1);
+        srand (5);
         
         // load files
         if (argc == 2) {
@@ -28,16 +31,9 @@ int main (int argc, const char * argv[])
         else {
             [ONParameterController loadParametersFromPList:nil];
         }
-        
-        
-        for (int i = 0; i < 100000; i++) {
-            // create the simplest node structure
-            ONGenome * simpleGenome = [ONGenome createSimpleGenomeWithInputs:2 outputs:1];
-            //NSLog(@"Starting Position: %@",[simpleGenome description]);
-            
-            // run the simplest xor experiment
-            [ONExperiment xorExperimentRunWithGenome:simpleGenome];
-        }
+                
+        ONxorExperiment * xorExperiment = [[ONxorExperiment alloc] init];
+        [xorExperiment runExperiment];
         
     }
     return 0;

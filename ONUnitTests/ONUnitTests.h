@@ -7,7 +7,10 @@
 //
 
 #import <SenTestingKit/SenTestingKit.h>
+@class ONGenome;
 
-@interface ONUnitTests : SenTestCase
+@interface ONUnitTests : SenTestCase {
+    ONGenome * genome2by2;
+}
 
 @end

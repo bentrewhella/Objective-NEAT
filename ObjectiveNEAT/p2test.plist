@@ -2,9 +2,47 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>weight_mut_power</key>
-	<real>1</real>
 	<key>num_runs</key>
 	<integer>1</integer>
+	<key>max_neural_net_loops</key>
+	<integer>10</integer>
+	<key>population_size</key>
+	<integer>150</integer>
+	<key>num_generations</key>
+	<integer>100</integer>
+	<key>mut_weight_max_perturbation</key>
+	<real>0.5</real>
+	<key>mut_weight_prob_replace</key>
+	<real>0.1</real>
+	<key>mut_prob_mutate_weight</key>
+	<real>0.8</real>
+	<key>c1_excess_coefficient</key>
+	<integer>1</integer>
+	<key>c2_disjoint_coefficient</key>
+	<integer>1</integer>
+	<key>c3_weight_coefficient</key>
+	<real>0.4</real>
+	<key>species_compatibility_threshold</key>
+	<real>0.6</real>
+	<key>species_age_without_improvement_limit</key>
+	<integer>20</integer>
+	<key>chance_add_link</key>
+	<real>0.7</real>
+	<key>chance_add_node</key>
+	<real>0.4</real>
+	<key>species_percent_organisms_survive</key>
+	<real>0.4</real>
+	<key>maximum_neurons</key>
+	<integer>20</integer>
+	<key>mutate_only_probability</key>
+	<real>0.25</real>
+	<key>young_species_age_threshold</key>
+	<integer>5</integer>
+	<key>young_species_fitness_bonus</key>
+	<real>1.3</real>
+	<key>old_species_age_threshold</key>
+	<integer>15</integer>
+	<key>old_species_fitness_penalty</key>
+	<real>0.7</real>
 </dict>
 </plist>

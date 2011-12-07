@@ -29,10 +29,46 @@
  */
 +(Boolean) loadParametersFromPList: (NSString *) filename;
 
-/** Weight mutation power */
-+(double) weightMutationPower;
 
 /** The total number of fresh runs (i.e. developed from base neuron) to be evaluated in the test */
 +(int) numRuns;
+
+/** The maximum number of loops any neural net can go through, in case of recurrant networks.
+ *  Start with something like 5
+ */
++(int) maxNeuralNetworkLoops;
+
++(int) populationSize;
+
++(int) numGenerations;
+
++(double) mutationProbabilityReplaceWeight;
+
++(double) mutationMaximumPerturbation;
+
++(double) mutationProbabilityMutateWeight;
+
++(double) c1ExcessCoefficient;
++(double) c2DisjointCoefficient;
++(double) c3weightCoefficient;
+
++(double) speciesCompatibilityThreshold;
+
++(int) speciesAgeSinceImprovementLimit;
+
++(double) speciesPercentOrganismsSurvive;
++(int) maximumNeurons;
+
++(double) chanceAddLink;
++(double) chanceAddNode;
++(double) mutateWeightOnlyDontCrossover;
+
++(int) youngSpeciesAgeThreshold;
+
++(double) youngSpeciesFitnessBonus;
+
++(int) oldSpeciesAgeThreshold;
+
++(double) oldSpeciesFitnessBonus;
 
 @end

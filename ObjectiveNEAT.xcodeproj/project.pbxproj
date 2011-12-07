@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B588FCD2148E7B2A001710F6 /* ONSpecies.m in Sources */ = {isa = PBXBuildFile; fileRef = B588FCD1148E7B2A001710F6 /* ONSpecies.m */; };
 		D10B1D4B14825D2D00E7BCB0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D10B1D4A14825D2D00E7BCB0 /* Foundation.framework */; };
 		D10B1D4E14825D2D00E7BCB0 /* ONmain.m in Sources */ = {isa = PBXBuildFile; fileRef = D10B1D4D14825D2D00E7BCB0 /* ONmain.m */; };
 		D10B1D5214825D2D00E7BCB0 /* ObjectiveNEAT.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = D10B1D5114825D2D00E7BCB0 /* ObjectiveNEAT.1 */; };
-		D10B1D5A1482602400E7BCB0 /* ONNNode.m in Sources */ = {isa = PBXBuildFile; fileRef = D10B1D591482602400E7BCB0 /* ONNNode.m */; };
-		D10B1D6114826A9500E7BCB0 /* ONLink.m in Sources */ = {isa = PBXBuildFile; fileRef = D10B1D6014826A9500E7BCB0 /* ONLink.m */; };
-		D10B1D6414826EB400E7BCB0 /* ONGene.m in Sources */ = {isa = PBXBuildFile; fileRef = D10B1D6314826EB400E7BCB0 /* ONGene.m */; };
+		D10B1D5A1482602400E7BCB0 /* ONGenoNode.m in Sources */ = {isa = PBXBuildFile; fileRef = D10B1D591482602400E7BCB0 /* ONGenoNode.m */; };
+		D10B1D6114826A9500E7BCB0 /* ONGenoLink.m in Sources */ = {isa = PBXBuildFile; fileRef = D10B1D6014826A9500E7BCB0 /* ONGenoLink.m */; };
 		D10B1D67148276DC00E7BCB0 /* ONGenome.m in Sources */ = {isa = PBXBuildFile; fileRef = D10B1D66148276DC00E7BCB0 /* ONGenome.m */; };
 		D10B1D6E14827C9F00E7BCB0 /* ONNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = D10B1D6D14827C9F00E7BCB0 /* ONNetwork.m */; };
 		D10B1D74148280B100E7BCB0 /* ONParameterController.m in Sources */ = {isa = PBXBuildFile; fileRef = D10B1D73148280B100E7BCB0 /* ONParameterController.m */; };
@@ -21,38 +21,74 @@
 		D10B1D8A1482F04300E7BCB0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D10B1D881482F04300E7BCB0 /* InfoPlist.strings */; };
 		D10B1D8D1482F04300E7BCB0 /* ONUnitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D10B1D8C1482F04300E7BCB0 /* ONUnitTests.m */; };
 		D10B1D991482FE8100E7BCB0 /* ONParameterController.m in Sources */ = {isa = PBXBuildFile; fileRef = D10B1D73148280B100E7BCB0 /* ONParameterController.m */; };
-		D10B1D9E1483B27000E7BCB0 /* ONNNode.m in Sources */ = {isa = PBXBuildFile; fileRef = D10B1D591482602400E7BCB0 /* ONNNode.m */; };
-		D10B1D9F1483B27000E7BCB0 /* ONLink.m in Sources */ = {isa = PBXBuildFile; fileRef = D10B1D6014826A9500E7BCB0 /* ONLink.m */; };
-		D10B1DA01483B27000E7BCB0 /* ONGene.m in Sources */ = {isa = PBXBuildFile; fileRef = D10B1D6314826EB400E7BCB0 /* ONGene.m */; };
+		D10B1D9E1483B27000E7BCB0 /* ONGenoNode.m in Sources */ = {isa = PBXBuildFile; fileRef = D10B1D591482602400E7BCB0 /* ONGenoNode.m */; };
+		D10B1D9F1483B27000E7BCB0 /* ONGenoLink.m in Sources */ = {isa = PBXBuildFile; fileRef = D10B1D6014826A9500E7BCB0 /* ONGenoLink.m */; };
 		D10B1DA11483B27000E7BCB0 /* ONGenome.m in Sources */ = {isa = PBXBuildFile; fileRef = D10B1D66148276DC00E7BCB0 /* ONGenome.m */; };
 		D10B1DA51483C16B00E7BCB0 /* ONExperiment.m in Sources */ = {isa = PBXBuildFile; fileRef = D10B1DA41483C16A00E7BCB0 /* ONExperiment.m */; };
+		D10B1DB41484E9F600E7BCB0 /* ONPhenoNode.m in Sources */ = {isa = PBXBuildFile; fileRef = D10B1DB31484E9F600E7BCB0 /* ONPhenoNode.m */; };
+		D10B1DB71484EA1200E7BCB0 /* ONPhenoLink.m in Sources */ = {isa = PBXBuildFile; fileRef = D10B1DB61484EA1200E7BCB0 /* ONPhenoLink.m */; };
+		D10B1DE41484F7FB00E7BCB0 /* ONUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = D10B1DE31484F7FB00E7BCB0 /* ONUtilities.m */; };
+		D10B1DE71484FBB600E7BCB0 /* ONInnovationDB.m in Sources */ = {isa = PBXBuildFile; fileRef = D10B1DE61484FBB600E7BCB0 /* ONInnovationDB.m */; };
+		D10B1DEA1485024600E7BCB0 /* ONInnovation.m in Sources */ = {isa = PBXBuildFile; fileRef = D10B1DE91485024500E7BCB0 /* ONInnovation.m */; };
+		D10B1E1E14853F4100E7BCB0 /* ONUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = D10B1DE31484F7FB00E7BCB0 /* ONUtilities.m */; };
+		D10B1E1F14853F4100E7BCB0 /* ONPhenoNode.m in Sources */ = {isa = PBXBuildFile; fileRef = D10B1DB31484E9F600E7BCB0 /* ONPhenoNode.m */; };
+		D10B1E2014853F4100E7BCB0 /* ONPhenoLink.m in Sources */ = {isa = PBXBuildFile; fileRef = D10B1DB61484EA1200E7BCB0 /* ONPhenoLink.m */; };
+		D10B1E2114853F4100E7BCB0 /* ONNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = D10B1D6D14827C9F00E7BCB0 /* ONNetwork.m */; };
+		D10B1E2C1485744200E7BCB0 /* p2test.plist in CopyFiles */ = {isa = PBXBuildFile; fileRef = D10B1D7114827FA100E7BCB0 /* p2test.plist */; };
+		D10B1E381486752F00E7BCB0 /* ONPopulation.m in Sources */ = {isa = PBXBuildFile; fileRef = D10B1E371486752F00E7BCB0 /* ONPopulation.m */; };
+		D10B1E3B1486759600E7BCB0 /* ONOrganism.m in Sources */ = {isa = PBXBuildFile; fileRef = D10B1E3A1486759600E7BCB0 /* ONOrganism.m */; };
+		D144FD371488C87D00C6FD93 /* ONxorExperiment.m in Sources */ = {isa = PBXBuildFile; fileRef = D144FD361488C87D00C6FD93 /* ONxorExperiment.m */; };
+		D144FD3C14890A7D00C6FD93 /* ONInnovation.m in Sources */ = {isa = PBXBuildFile; fileRef = D10B1DE91485024500E7BCB0 /* ONInnovation.m */; };
+		D144FD3D14890A7D00C6FD93 /* ONInnovationDB.m in Sources */ = {isa = PBXBuildFile; fileRef = D10B1DE61484FBB600E7BCB0 /* ONInnovationDB.m */; };
+		D144FD3E14890A7D00C6FD93 /* ONOrganism.m in Sources */ = {isa = PBXBuildFile; fileRef = D10B1E3A1486759600E7BCB0 /* ONOrganism.m */; };
+		D144FD3F14890A7D00C6FD93 /* ONPopulation.m in Sources */ = {isa = PBXBuildFile; fileRef = D10B1E371486752F00E7BCB0 /* ONPopulation.m */; };
+		D144FD4014890A7D00C6FD93 /* ONExperiment.m in Sources */ = {isa = PBXBuildFile; fileRef = D10B1DA41483C16A00E7BCB0 /* ONExperiment.m */; };
+		D144FD4114890A7D00C6FD93 /* ONxorExperiment.m in Sources */ = {isa = PBXBuildFile; fileRef = D144FD361488C87D00C6FD93 /* ONxorExperiment.m */; };
+		D144FD4214890AD900C6FD93 /* p2blank.plist in CopyFiles */ = {isa = PBXBuildFile; fileRef = D10B1D751482EEAF00E7BCB0 /* p2blank.plist */; };
+		D144FD4314890AE100C6FD93 /* p2test.plist in Resources */ = {isa = PBXBuildFile; fileRef = D10B1D7114827FA100E7BCB0 /* p2test.plist */; };
+		D144FD4414890AE100C6FD93 /* p2blank.plist in Resources */ = {isa = PBXBuildFile; fileRef = D10B1D751482EEAF00E7BCB0 /* p2blank.plist */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXBuildRule section */
+		D10B1E2B148573C400E7BCB0 /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			fileType = text.plist;
+			isEditable = 1;
+			outputFiles = (
+			);
+			script = "# builtin-copyPlist\n";
+		};
+/* End PBXBuildRule section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		D10B1D4414825D2D00E7BCB0 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
+			buildActionMask = 12;
+			dstPath = .;
+			dstSubfolderSpec = 16;
 			files = (
+				D144FD4214890AD900C6FD93 /* p2blank.plist in CopyFiles */,
+				D10B1E2C1485744200E7BCB0 /* p2test.plist in CopyFiles */,
 				D10B1D5214825D2D00E7BCB0 /* ObjectiveNEAT.1 in CopyFiles */,
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B588FCD0148E7B2A001710F6 /* ONSpecies.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ONSpecies.h; sourceTree = "<group>"; };
+		B588FCD1148E7B2A001710F6 /* ONSpecies.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ONSpecies.m; sourceTree = "<group>"; };
+		B5C6F71D148E32900047855A /* ToDo */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ToDo; sourceTree = "<group>"; };
 		D10B1D4614825D2D00E7BCB0 /* ObjectiveNEAT */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ObjectiveNEAT; sourceTree = BUILT_PRODUCTS_DIR; };
 		D10B1D4A14825D2D00E7BCB0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D10B1D4D14825D2D00E7BCB0 /* ONmain.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ONmain.m; sourceTree = "<group>"; };
 		D10B1D5014825D2D00E7BCB0 /* ObjectiveNEAT-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ObjectiveNEAT-Prefix.pch"; sourceTree = "<group>"; };
 		D10B1D5114825D2D00E7BCB0 /* ObjectiveNEAT.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = ObjectiveNEAT.1; sourceTree = "<group>"; };
-		D10B1D581482602400E7BCB0 /* ONNNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ONNNode.h; sourceTree = "<group>"; };
-		D10B1D591482602400E7BCB0 /* ONNNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ONNNode.m; sourceTree = "<group>"; };
-		D10B1D5F14826A9500E7BCB0 /* ONLink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ONLink.h; sourceTree = "<group>"; };
-		D10B1D6014826A9500E7BCB0 /* ONLink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ONLink.m; sourceTree = "<group>"; };
-		D10B1D6214826EB400E7BCB0 /* ONGene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ONGene.h; sourceTree = "<group>"; };
-		D10B1D6314826EB400E7BCB0 /* ONGene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ONGene.m; sourceTree = "<group>"; };
+		D10B1D581482602400E7BCB0 /* ONGenoNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ONGenoNode.h; sourceTree = "<group>"; };
+		D10B1D591482602400E7BCB0 /* ONGenoNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ONGenoNode.m; sourceTree = "<group>"; };
+		D10B1D5F14826A9500E7BCB0 /* ONGenoLink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ONGenoLink.h; sourceTree = "<group>"; };
+		D10B1D6014826A9500E7BCB0 /* ONGenoLink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ONGenoLink.m; sourceTree = "<group>"; };
 		D10B1D65148276DC00E7BCB0 /* ONGenome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ONGenome.h; sourceTree = "<group>"; };
 		D10B1D66148276DC00E7BCB0 /* ONGenome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ONGenome.m; sourceTree = "<group>"; };
 		D10B1D6C14827C9F00E7BCB0 /* ONNetwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ONNetwork.h; sourceTree = "<group>"; };
@@ -74,6 +110,22 @@
 		D10B1D8E1482F04300E7BCB0 /* ONUnitTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ONUnitTests-Prefix.pch"; sourceTree = "<group>"; };
 		D10B1DA31483C16A00E7BCB0 /* ONExperiment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ONExperiment.h; sourceTree = "<group>"; };
 		D10B1DA41483C16A00E7BCB0 /* ONExperiment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ONExperiment.m; sourceTree = "<group>"; };
+		D10B1DB21484E9F600E7BCB0 /* ONPhenoNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ONPhenoNode.h; sourceTree = "<group>"; };
+		D10B1DB31484E9F600E7BCB0 /* ONPhenoNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ONPhenoNode.m; sourceTree = "<group>"; };
+		D10B1DB51484EA1200E7BCB0 /* ONPhenoLink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ONPhenoLink.h; sourceTree = "<group>"; };
+		D10B1DB61484EA1200E7BCB0 /* ONPhenoLink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ONPhenoLink.m; sourceTree = "<group>"; };
+		D10B1DE21484F7FB00E7BCB0 /* ONUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ONUtilities.h; sourceTree = "<group>"; };
+		D10B1DE31484F7FB00E7BCB0 /* ONUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ONUtilities.m; sourceTree = "<group>"; };
+		D10B1DE51484FBB600E7BCB0 /* ONInnovationDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ONInnovationDB.h; sourceTree = "<group>"; };
+		D10B1DE61484FBB600E7BCB0 /* ONInnovationDB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ONInnovationDB.m; sourceTree = "<group>"; };
+		D10B1DE81485024500E7BCB0 /* ONInnovation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ONInnovation.h; sourceTree = "<group>"; };
+		D10B1DE91485024500E7BCB0 /* ONInnovation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ONInnovation.m; sourceTree = "<group>"; };
+		D10B1E361486752F00E7BCB0 /* ONPopulation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ONPopulation.h; sourceTree = "<group>"; };
+		D10B1E371486752F00E7BCB0 /* ONPopulation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ONPopulation.m; sourceTree = "<group>"; };
+		D10B1E391486759600E7BCB0 /* ONOrganism.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ONOrganism.h; sourceTree = "<group>"; };
+		D10B1E3A1486759600E7BCB0 /* ONOrganism.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ONOrganism.m; sourceTree = "<group>"; };
+		D144FD351488C87D00C6FD93 /* ONxorExperiment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ONxorExperiment.h; sourceTree = "<group>"; };
+		D144FD361488C87D00C6FD93 /* ONxorExperiment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ONxorExperiment.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,20 +182,14 @@
 		D10B1D4C14825D2D00E7BCB0 /* ObjectiveNEAT */ = {
 			isa = PBXGroup;
 			children = (
+				D10B1DE11484F7E000E7BCB0 /* Utilities */,
 				D10B1D6F14827EF900E7BCB0 /* Parameter Files */,
-				D10B1D581482602400E7BCB0 /* ONNNode.h */,
-				D10B1D591482602400E7BCB0 /* ONNNode.m */,
-				D10B1D5F14826A9500E7BCB0 /* ONLink.h */,
-				D10B1D6014826A9500E7BCB0 /* ONLink.m */,
-				D10B1D6214826EB400E7BCB0 /* ONGene.h */,
-				D10B1D6314826EB400E7BCB0 /* ONGene.m */,
-				D10B1D65148276DC00E7BCB0 /* ONGenome.h */,
-				D10B1D66148276DC00E7BCB0 /* ONGenome.m */,
-				D10B1D6C14827C9F00E7BCB0 /* ONNetwork.h */,
-				D10B1D6D14827C9F00E7BCB0 /* ONNetwork.m */,
-				D10B1DA31483C16A00E7BCB0 /* ONExperiment.h */,
-				D10B1DA41483C16A00E7BCB0 /* ONExperiment.m */,
+				D10B1DAE1484E83500E7BCB0 /* Genotype */,
+				D10B1DB01484E84200E7BCB0 /* Phenotype */,
+				D10B1E351486732700E7BCB0 /* Populations */,
+				D10B1DB11484E85E00E7BCB0 /* Experiments */,
 				D10B1D4D14825D2D00E7BCB0 /* ONmain.m */,
+				B5C6F71D148E32900047855A /* ToDo */,
 				D10B1D4F14825D2D00E7BCB0 /* Supporting Files */,
 			);
 			path = ObjectiveNEAT;
@@ -199,6 +245,69 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		D10B1DAE1484E83500E7BCB0 /* Genotype */ = {
+			isa = PBXGroup;
+			children = (
+				D10B1D581482602400E7BCB0 /* ONGenoNode.h */,
+				D10B1D591482602400E7BCB0 /* ONGenoNode.m */,
+				D10B1D5F14826A9500E7BCB0 /* ONGenoLink.h */,
+				D10B1D6014826A9500E7BCB0 /* ONGenoLink.m */,
+				D10B1D65148276DC00E7BCB0 /* ONGenome.h */,
+				D10B1D66148276DC00E7BCB0 /* ONGenome.m */,
+				D10B1DE81485024500E7BCB0 /* ONInnovation.h */,
+				D10B1DE91485024500E7BCB0 /* ONInnovation.m */,
+				D10B1DE51484FBB600E7BCB0 /* ONInnovationDB.h */,
+				D10B1DE61484FBB600E7BCB0 /* ONInnovationDB.m */,
+			);
+			name = Genotype;
+			sourceTree = "<group>";
+		};
+		D10B1DB01484E84200E7BCB0 /* Phenotype */ = {
+			isa = PBXGroup;
+			children = (
+				D10B1DB21484E9F600E7BCB0 /* ONPhenoNode.h */,
+				D10B1DB31484E9F600E7BCB0 /* ONPhenoNode.m */,
+				D10B1DB51484EA1200E7BCB0 /* ONPhenoLink.h */,
+				D10B1DB61484EA1200E7BCB0 /* ONPhenoLink.m */,
+				D10B1D6C14827C9F00E7BCB0 /* ONNetwork.h */,
+				D10B1D6D14827C9F00E7BCB0 /* ONNetwork.m */,
+			);
+			name = Phenotype;
+			sourceTree = "<group>";
+		};
+		D10B1DB11484E85E00E7BCB0 /* Experiments */ = {
+			isa = PBXGroup;
+			children = (
+				D10B1DA31483C16A00E7BCB0 /* ONExperiment.h */,
+				D10B1DA41483C16A00E7BCB0 /* ONExperiment.m */,
+				D144FD351488C87D00C6FD93 /* ONxorExperiment.h */,
+				D144FD361488C87D00C6FD93 /* ONxorExperiment.m */,
+			);
+			name = Experiments;
+			sourceTree = "<group>";
+		};
+		D10B1DE11484F7E000E7BCB0 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				D10B1DE21484F7FB00E7BCB0 /* ONUtilities.h */,
+				D10B1DE31484F7FB00E7BCB0 /* ONUtilities.m */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
+		D10B1E351486732700E7BCB0 /* Populations */ = {
+			isa = PBXGroup;
+			children = (
+				D10B1E391486759600E7BCB0 /* ONOrganism.h */,
+				D10B1E3A1486759600E7BCB0 /* ONOrganism.m */,
+				B588FCD0148E7B2A001710F6 /* ONSpecies.h */,
+				B588FCD1148E7B2A001710F6 /* ONSpecies.m */,
+				D10B1E361486752F00E7BCB0 /* ONPopulation.h */,
+				D10B1E371486752F00E7BCB0 /* ONPopulation.m */,
+			);
+			name = Populations;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -211,6 +320,7 @@
 				D10B1D4414825D2D00E7BCB0 /* CopyFiles */,
 			);
 			buildRules = (
+				D10B1E2B148573C400E7BCB0 /* PBXBuildRule */,
 			);
 			dependencies = (
 			);
@@ -269,6 +379,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D144FD4314890AE100C6FD93 /* p2test.plist in Resources */,
+				D144FD4414890AE100C6FD93 /* p2blank.plist in Resources */,
 				D10B1D8A1482F04300E7BCB0 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -297,13 +409,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				D10B1D4E14825D2D00E7BCB0 /* ONmain.m in Sources */,
-				D10B1D5A1482602400E7BCB0 /* ONNNode.m in Sources */,
-				D10B1D6114826A9500E7BCB0 /* ONLink.m in Sources */,
-				D10B1D6414826EB400E7BCB0 /* ONGene.m in Sources */,
+				D10B1D5A1482602400E7BCB0 /* ONGenoNode.m in Sources */,
+				D10B1D6114826A9500E7BCB0 /* ONGenoLink.m in Sources */,
 				D10B1D67148276DC00E7BCB0 /* ONGenome.m in Sources */,
 				D10B1D6E14827C9F00E7BCB0 /* ONNetwork.m in Sources */,
 				D10B1D74148280B100E7BCB0 /* ONParameterController.m in Sources */,
 				D10B1DA51483C16B00E7BCB0 /* ONExperiment.m in Sources */,
+				D10B1DB41484E9F600E7BCB0 /* ONPhenoNode.m in Sources */,
+				D10B1DB71484EA1200E7BCB0 /* ONPhenoLink.m in Sources */,
+				D10B1DE41484F7FB00E7BCB0 /* ONUtilities.m in Sources */,
+				D10B1DE71484FBB600E7BCB0 /* ONInnovationDB.m in Sources */,
+				D10B1DEA1485024600E7BCB0 /* ONInnovation.m in Sources */,
+				D10B1E381486752F00E7BCB0 /* ONPopulation.m in Sources */,
+				D10B1E3B1486759600E7BCB0 /* ONOrganism.m in Sources */,
+				D144FD371488C87D00C6FD93 /* ONxorExperiment.m in Sources */,
+				B588FCD2148E7B2A001710F6 /* ONSpecies.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,9 +431,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D10B1D9E1483B27000E7BCB0 /* ONNNode.m in Sources */,
-				D10B1D9F1483B27000E7BCB0 /* ONLink.m in Sources */,
-				D10B1DA01483B27000E7BCB0 /* ONGene.m in Sources */,
+				D144FD3C14890A7D00C6FD93 /* ONInnovation.m in Sources */,
+				D144FD3D14890A7D00C6FD93 /* ONInnovationDB.m in Sources */,
+				D144FD3E14890A7D00C6FD93 /* ONOrganism.m in Sources */,
+				D144FD3F14890A7D00C6FD93 /* ONPopulation.m in Sources */,
+				D144FD4014890A7D00C6FD93 /* ONExperiment.m in Sources */,
+				D144FD4114890A7D00C6FD93 /* ONxorExperiment.m in Sources */,
+				D10B1E1E14853F4100E7BCB0 /* ONUtilities.m in Sources */,
+				D10B1E1F14853F4100E7BCB0 /* ONPhenoNode.m in Sources */,
+				D10B1E2014853F4100E7BCB0 /* ONPhenoLink.m in Sources */,
+				D10B1E2114853F4100E7BCB0 /* ONNetwork.m in Sources */,
+				D10B1D9E1483B27000E7BCB0 /* ONGenoNode.m in Sources */,
+				D10B1D9F1483B27000E7BCB0 /* ONGenoLink.m in Sources */,
 				D10B1DA11483B27000E7BCB0 /* ONGenome.m in Sources */,
 				D10B1D991482FE8100E7BCB0 /* ONParameterController.m in Sources */,
 				D10B1D8D1482F04300E7BCB0 /* ONUnitTests.m in Sources */,

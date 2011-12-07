@@ -20,5 +20,7 @@
 	<real>0.4</real>
 	<key>mutate_only_prob</key>
 	<real>0.25</real>
+	<key>num_runs</key>
+	<integer>2</integer>
 </dict>
 </plist>
