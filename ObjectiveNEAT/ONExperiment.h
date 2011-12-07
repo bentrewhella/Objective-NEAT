@@ -23,7 +23,10 @@
 
 @interface ONExperiment : NSObject {
     ONPopulation * thePopulation;
+    bool solutionFound;
 }
+
+@property bool solutionFound;
 
 /**
  * Returns the initial Genome.  Subclasses can create a genome here using convenience methods or file loaders. 
@@ -66,7 +69,7 @@
  */
 -(void) evaluatePopulation;
 
-
+-(void) reportResults;
 
 
 @end

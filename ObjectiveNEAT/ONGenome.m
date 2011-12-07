@@ -68,7 +68,20 @@ static bool genesisOccurred = false;
     }
 }
 
--(void) toggleRandomWeight {
+-(void) reEnableRandomWeight {
+    NSMutableArray * disabledLinks = [NSMutableArray array];
+    for (ONGenoLink * nextLink in genoLinks) {
+        if (!nextLink.isEnabled) {
+            [disabledLinks addObject: nextLink];
+        }
+    }
+    if (disabledLinks.count > 0) {
+        ONGenoLink * randomLink = [disabledLinks objectAtIndex:rand() % disabledLinks.count];
+        randomLink.isEnabled = true;
+    }
+}
+
+-(void) toggleRandomLink {
     ONGenoLink * randomLink = [genoLinks objectAtIndex:rand() % genoLinks.count];
     if (randomLink.isEnabled) {
         randomLink.isEnabled = false;
@@ -99,7 +112,7 @@ static bool genesisOccurred = false;
     }
     // cannot create a link where there is a reverse link existing
     if ([self getLinkFromNodeID:randomToNode.nodeID toNodeID:randomFromNode.nodeID] != nil) {
-        //return;
+        return;
     }
     
     // all clear - we can link these nodes
@@ -194,13 +207,16 @@ static bool genesisOccurred = false;
     else if (randomDouble() < [ONParameterController chanceAddLink]) {
         [self addLink];
     }
-    else if (randomDouble() < [ONParameterController mutationProbabilityMutateWeight]) {
+    
+    else if (randomDouble() < [ONParameterController chanceMutateWeight]) {
         [self perturbLinkWeight];
     }
-    else {
-        // randomly toggle a link
-        [self toggleRandomWeight];
+    else if (randomDouble() < [ONParameterController chanceToggleLinks]) {
+        [self toggleRandomLink];
     }
+    else if (randomDouble() < [ONParameterController changeReenableLinks]) {
+        [self reEnableRandomWeight];
+    } 
     return self;
 }
 
@@ -258,7 +274,7 @@ static bool genesisOccurred = false;
         // disjoint gene
         else if (mumNextLink.linkID < dadNextLink.linkID) {
             // don't do anything - we ignore the less fit link
-            [childGenome.genoLinks addObject:[mumNextLink copy]];
+            [childGenome.genoLinks addObject:[mumNextLink copy]];  // should do this but it seems to get good results
             mumIndex++;
             if (mumIndex == mumGenome.genoLinks.count) {
                 mumHasLinksLeft = false;
@@ -278,6 +294,18 @@ static bool genesisOccurred = false;
             dadNextLink = [genoLinks objectAtIndex:dadIndex];
         }
     }
+    /* Do not add excess Genes from less fit Genome
+    while (mumHasLinksLeft) {
+        [childGenome.genoLinks addObject:[mumNextLink copy]];
+        mumIndex++;
+        if (mumIndex == mumGenome.genoLinks.count) {
+            mumHasLinksLeft = false;
+        }
+        else {
+            mumNextLink = [mumGenome.genoLinks objectAtIndex:mumIndex];
+        }
+    }
+     */
     
     for (ONGenoLink * nextLink in childGenome.genoLinks) {
         if ([childGenome getNodeWithID: nextLink.fromNode] == nil) {

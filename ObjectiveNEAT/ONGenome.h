@@ -51,7 +51,8 @@
 /** Runs through every link and sets the weight to a random number between -1 and 1. */
 -(ONGenome *) randomiseWeights;
 -(void) perturbLinkWeight;
--(void) toggleRandomWeight;
+-(void) reEnableRandomWeight;
+-(void) toggleRandomLink;
 -(void) addLink;
 -(void) addNode;
 -(ONGenome *) mutateGenome;

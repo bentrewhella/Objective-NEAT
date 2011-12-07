@@ -47,9 +47,13 @@
         (finalOutput[2] > 0.5) &&
         (finalOutput[3] < 0.5)) {
         NSLog(@"We've found a winner!!!!!!!!!!!!!!!!!!");
-        NSLog(@"Winner is %@", [subject.genome description]);
-        NSAssert(false, @"Winner Found");
+        solutionOrganism = subject;
+        solutionFound = true;
     }
+}
+
+-(void) reportResults {
+    NSLog(@"Winner is %@", [solutionOrganism.genome description]);
 }
 
 @end

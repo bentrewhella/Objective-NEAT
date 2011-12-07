@@ -10,13 +10,14 @@
 
 @implementation ONParameterController 
 
-static int numRuns;
 static int maxNeuralNetworkLoops;
 static int populationSize;
 static int numGenerations;
 static double mutationProbabilityReplaceWeight;
 static double mutationMaximumPerturbation;
-static double mutationProbabilityMutateWeight;
+static double chanceMutateWeight;
+static double chanceToggleLinks;
+static double changeReenableLinks;
 static double c1ExcessCoefficient;
 static double c2DisjointCoefficient;
 static double c3weightCoefficient;
@@ -58,13 +59,14 @@ static double oldSpeciesFitnessBonus;
     NSLog(@"Parameters file %@.plist loaded ok", filename);
     
     // now we have the file - set the parameters 
-    numRuns = [(NSNumber *) [temp objectForKey:@"num_runs"] intValue];
     maxNeuralNetworkLoops = [(NSNumber *) [temp objectForKey:@"max_neural_net_loops"] intValue];
     populationSize = [(NSNumber *) [temp objectForKey:@"population_size"] intValue];
     numGenerations = [(NSNumber *) [temp objectForKey:@"num_generations"] intValue];
     mutationProbabilityReplaceWeight = [(NSNumber *) [temp objectForKey:@"mut_weight_max_perturbation"] doubleValue];
     mutationMaximumPerturbation = [(NSNumber *) [temp objectForKey:@"mut_weight_prob_replace"] doubleValue];
-    mutationProbabilityMutateWeight = [(NSNumber *) [temp objectForKey:@"mut_prob_mutate_weight"] doubleValue];
+    chanceMutateWeight = [(NSNumber *) [temp objectForKey:@"chance_mutate_weights"] doubleValue];
+    chanceToggleLinks = [(NSNumber *) [temp objectForKey:@"chance_toggle_link"] doubleValue];
+    changeReenableLinks = [(NSNumber *) [temp objectForKey:@"chance_reenable_link"] doubleValue];
     c1ExcessCoefficient = [(NSNumber *) [temp objectForKey:@"c1_excess_coefficient"] doubleValue];
     c2DisjointCoefficient = [(NSNumber *) [temp objectForKey:@"c2_disjoint_coefficient"] doubleValue];
     c3weightCoefficient = [(NSNumber *) [temp objectForKey:@"c3_weight_coefficient"] doubleValue];
@@ -74,16 +76,12 @@ static double oldSpeciesFitnessBonus;
     maximumNeurons = [(NSNumber *) [temp objectForKey:@"maximum_neurons"] intValue];
     chanceAddLink = [(NSNumber *) [temp objectForKey:@"chance_add_link"] doubleValue];
     chanceAddNode = [(NSNumber *) [temp objectForKey:@"chance_add_node"] doubleValue];
-    mutateWeightOnlyDontCrossover = [(NSNumber *) [temp objectForKey:@"mutate_only_probability"] doubleValue];
+    mutateWeightOnlyDontCrossover = [(NSNumber *) [temp objectForKey:@"mutate_rather_than_crossover_probability"] doubleValue];
     youngSpeciesAgeThreshold = [(NSNumber *) [temp objectForKey:@"young_species_age_threshold"] intValue];
     youngSpeciesFitnessBonus = [(NSNumber *) [temp objectForKey:@"young_species_fitness_bonus"] doubleValue];
     oldSpeciesAgeThreshold = [(NSNumber *) [temp objectForKey:@"old_species_age_threshold"] intValue];
     oldSpeciesFitnessBonus = [(NSNumber *) [temp objectForKey:@"old_species_fitness_penalty"] doubleValue];
     return TRUE;
-}
-
-+(int) numRuns {
-    return numRuns;
 }
 
 +(int) maxNeuralNetworkLoops {
@@ -106,8 +104,16 @@ static double oldSpeciesFitnessBonus;
     return mutationMaximumPerturbation;
 }
 
-+(double) mutationProbabilityMutateWeight {
-    return mutationProbabilityMutateWeight;
++(double) chanceMutateWeight {
+    return chanceMutateWeight;
+}
+
++(double) chanceToggleLinks {
+    return chanceToggleLinks;
+}
+
++(double) changeReenableLinks {
+    return changeReenableLinks;
 }
 
 +(double) c1ExcessCoefficient {

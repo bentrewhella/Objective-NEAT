@@ -30,9 +30,6 @@
 +(Boolean) loadParametersFromPList: (NSString *) filename;
 
 
-/** The total number of fresh runs (i.e. developed from base neuron) to be evaluated in the test */
-+(int) numRuns;
-
 /** The maximum number of loops any neural net can go through, in case of recurrant networks.
  *  Start with something like 5
  */
@@ -46,7 +43,11 @@
 
 +(double) mutationMaximumPerturbation;
 
-+(double) mutationProbabilityMutateWeight;
++(double) chanceMutateWeight;
+
++(double) chanceToggleLinks;
+
++(double) changeReenableLinks;
 
 +(double) c1ExcessCoefficient;
 +(double) c2DisjointCoefficient;

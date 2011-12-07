@@ -59,6 +59,14 @@
     return NSOrderedAscending;
 }
 
+-(ONOrganism *) copyWithZone: (NSZone *) zone {
+    ONOrganism * copiedOrganism = [[ONOrganism alloc] init];
+    copiedOrganism.genome = [genome copy];
+    copiedOrganism.fitness = fitness;
+    return copiedOrganism;
+}
+
+
 -(NSString *) description {
     return [NSString stringWithFormat: @"Organism with fitness: %1.3f", fitness];   
 }

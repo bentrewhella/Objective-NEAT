@@ -64,6 +64,10 @@
             sumFitness += nextOrganism.fitness;
             [allSpecies addObject:newSpecies];
         }
+        
+        if (nextOrganism.fitness > fittestOrganismEver.fitness) {
+            fittestOrganismEver = [nextOrganism copy];
+        }
     }
     
     for (ONSpecies * nextSpecies in allSpecies) {
@@ -78,10 +82,12 @@
     
     // sort the entire population and find out if we have a new best
     [allOrganisms sortUsingSelector:@selector(compareFitnessWith:)];
+    
+    /*
     ONOrganism * mostFitCandidate = [allOrganisms objectAtIndex:0];
     if (mostFitCandidate.fitness > fittestOrganismEver.fitness) {
-        fittestOrganismEver = mostFitCandidate;
-    }
+        fittestOrganismEver = [mostFitCandidate copy];
+    }*/
     
     [allOrganisms removeAllObjects];
     for (ONSpecies * nextSpecies in allSpecies) {

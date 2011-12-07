@@ -1,2 +1,6 @@
 1. Finish documentation
 2. Bug - not picking up highest fitness of while population
+
+Questions 
+- should we add the excess / disjoint genes from the less fit parent (see ONGenome crossover)
+

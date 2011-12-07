@@ -11,6 +11,7 @@
 #import "ONInnovationDB.h"
 
 @implementation ONExperiment
+@synthesize solutionFound;
 
 -(ONGenome *) initialGenome {
     return [ONGenome createSimpleGenomeWithInputs:2 outputs:1];
@@ -27,18 +28,16 @@
 
 -(void) runExperiment {
     
-    
-    for (int i = 0; i < [ONParameterController numGenerations]; i++) {
-        if (i == 0) {
-            // initialise the population
-            [self initialisePopulation]; 
-        }
-        else {
-            [thePopulation rePopulateFromFittest];
-        }
+    solutionFound = false;
+    // initialise the population
+    [self initialisePopulation]; 
+    [self evaluatePopulation];
+    while (!solutionFound) {
+        [thePopulation rePopulateFromFittest];
+        NSLog(@"%@", [thePopulation description]);
         [self evaluatePopulation];
     }
-    
+    [self reportResults];
 }
 
 -(void) evaluatePopulation {
@@ -49,7 +48,10 @@
         
         [nextOrganism destroyNetwork];
     }
-    NSLog(@"%@", [thePopulation description]);
+}
+
+-(void) reportResults {
+    // called when the experiment ends, override as required
 }
 
 @end

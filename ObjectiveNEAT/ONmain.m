@@ -21,7 +21,7 @@ int main (int argc, const char * argv[])
         
         // set up random number generator for repeatability (or not)
         //srand ((uint) time(NULL));
-        srand (5);
+        srand (0);
         
         // load files
         if (argc == 2) {

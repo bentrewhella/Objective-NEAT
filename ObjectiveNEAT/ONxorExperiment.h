@@ -8,9 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import "ONExperiment.h"
+@class ONOrganism;
 
 @interface ONxorExperiment : ONExperiment {
-    
+    ONOrganism * solutionOrganism;
 }
 
 @end

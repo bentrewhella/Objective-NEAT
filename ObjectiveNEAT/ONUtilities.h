@@ -8,14 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
-
+/** Utility functions to be shared across all classes */
 
 @interface ONUtilities : NSObject
 
-/* returns a random float in the ranve 0 < n < 1 */
+/* returns a random double in the range 0 < n < 1 */
 double randomDouble (void);
 
-/** returns a random float in the range -1 < n < 1 */
+/** returns a random double in the range -1 < n < 1 */
 double randomClampedDouble (void);
 
 

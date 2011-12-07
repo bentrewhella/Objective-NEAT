@@ -42,7 +42,7 @@ static int speciesCounter = 0;
     }
     speciesFitnessTotal += org.fitness;
     if (org.fitness > fittestOrganism.fitness) {
-        fittestOrganism = org;
+        fittestOrganism = [org copy];
         ageSinceImprovement = 0;
     }
 }
