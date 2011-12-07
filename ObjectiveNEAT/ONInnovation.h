@@ -12,6 +12,20 @@
 
 
 /**
+ * Innovation Protocol just enables both Nodes and Links to be stored in the 
+ * Innocation database by providing a single referral mechanism.
+ */
+
+
+@protocol ONInnovationInformationProtocol <NSObject>
+/** 
+ * Classes implementing this protocol (e.g. ONGenoNode and ONGenoLink) 
+ * should return their own ID when called by this method.
+ */
+-(int) getInnovationID;
+@end
+
+/**
  * An Innovation represents a new Node or Link in the global poputlation
  *  
  * It stores a COPY of the ONGenoNode or ONGenoType for reference, 
@@ -26,19 +40,18 @@
  *
  */
 
-@protocol ONInnovationInformationProtocol <NSObject>
--(int) getInnovationID;
-@end
 
 @interface ONInnovation : NSObject {
-    // a record of the node or link
     id <ONInnovationInformationProtocol> nodeOrLink;
     
     // for Link innovations
     int fromNodeID;
     int toNodeID;
 }
-
+/**
+ * A pointer to the ONGenoNode or ONGenoLink, 
+ * which in turn can be consulted for more information on the Innovation.
+ */
 @property (copy) id nodeOrLink;
 
 /** The literal (non-pointer) reference to the node preceeding this node / acting as input to the link */

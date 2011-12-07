@@ -17,6 +17,16 @@
     return [ONGenome createSimpleGenomeWithInputs:2 outputs:1];
 }
 
+-(void) initialiseExperiment {
+    int seed = [ONParameterController randomSeed];
+    if (seed == 0) {
+        srand((unsigned int)time(NULL));
+    }
+    else {
+        srand(seed);
+    }
+}
+
 -(void) initialisePopulation {
     ONGenome * firstGenome = [self initialGenome];
     thePopulation = [ONPopulation spawnInitialGenerationFromGenome:firstGenome];
@@ -28,11 +38,12 @@
 
 -(void) runExperiment {
     
+    [self initialiseExperiment];
     solutionFound = false;
     // initialise the population
     [self initialisePopulation]; 
     [self evaluatePopulation];
-    while (!solutionFound) {
+    while (!solutionFound && thePopulation.generation < [ONParameterController numGenerations]) {
         [thePopulation rePopulateFromFittest];
         NSLog(@"%@", [thePopulation description]);
         [self evaluatePopulation];

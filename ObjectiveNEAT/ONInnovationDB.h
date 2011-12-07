@@ -30,6 +30,9 @@
     NSMutableArray * nodeRecord;
 }
 
+/**
+ * Consult the Innovation DB to find the specified node
+ */
 -(ONGenoNode *) getNodeWithID: (int) nodeID;
 
 /** 

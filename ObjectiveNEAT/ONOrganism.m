@@ -35,7 +35,6 @@
 
 -(ONOrganism *) reproduceChildOrganism {
     ONGenome * childGenome = [genome copy];
-    [childGenome verifyGenome];
     [childGenome mutateGenome];
     ONOrganism * childOrganism = [[ONOrganism alloc] initWithGenome:childGenome];
     return childOrganism;
@@ -43,7 +42,6 @@
 
 -(ONOrganism *) reproduceChildOrganismWithOrganism: (ONOrganism *) lessFitMate {
     ONGenome * childGenome = [genome offspringWithGenome: lessFitMate.genome];
-    [childGenome verifyGenome];
     [childGenome mutateGenome];
     ONOrganism * childOrganism = [[ONOrganism alloc] initWithGenome:childGenome];
     return childOrganism;

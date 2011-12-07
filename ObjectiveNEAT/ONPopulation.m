@@ -83,12 +83,6 @@
     // sort the entire population and find out if we have a new best
     [allOrganisms sortUsingSelector:@selector(compareFitnessWith:)];
     
-    /*
-    ONOrganism * mostFitCandidate = [allOrganisms objectAtIndex:0];
-    if (mostFitCandidate.fitness > fittestOrganismEver.fitness) {
-        fittestOrganismEver = [mostFitCandidate copy];
-    }*/
-    
     [allOrganisms removeAllObjects];
     for (ONSpecies * nextSpecies in allSpecies) {
         // need to improve this so fitter species create more organisms

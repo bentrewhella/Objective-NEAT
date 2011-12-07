@@ -53,7 +53,16 @@
  */
 -(void) destroyNetwork;
 
+/** 
+ * Asexual reproduction - creates a copy of its own genome then mutates before 
+ * developing into an organism.
+ */
 -(ONOrganism *) reproduceChildOrganism;
+
+/**
+ * Sexual reproduction - performs crossover between the two parent genomes, mutates 
+ * the develops into an organism.
+ */
 -(ONOrganism *) reproduceChildOrganismWithOrganism: (ONOrganism *) lessFitMate;
 
 /**

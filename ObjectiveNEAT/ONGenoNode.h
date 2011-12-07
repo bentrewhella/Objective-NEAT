@@ -12,18 +12,18 @@
 #import "ONInnovation.h"
 
 /**
- * A GenoNode represents a Neural Node within the Genotype/Genome
+ * A GenoNode represents a Neural Node within the Genotype/Genome.
  *  
  * It is either a sensor (INPUT or BIAS) or a neuron (HIDDEN or OUTPUT):
  *  - If it's a sensor, it can be loaded with a value for output
- *  - If it's a neuron, it has a mutable array of incoming input signals
+ *  - If it's a neuron, it has a mutable array of incoming input signals.
  *
  * There will be a first layer of INPUT sensors including at least one BIAS sensor
- * The remaining neurons will consist of HIDDEN or OUTPUT nodes
+ * The remaining neurons will consist of HIDDEN or OUTPUT nodes.
  * 
  * Each GenoNode records also records it's {x, y} (range 0-1) within the network
  * Simply because this is easier to work out in creation rather than afterwards
- * This can be used to draw the genome if required
+ * This can be used to draw the genome if required.
  */
 
 
@@ -42,9 +42,9 @@ typedef enum NodeType {
     CGPoint nodePosition;
 }
 
-/** The unique identifier for this node, which should be set from the global innovation database method getNextGenomeID
+/** The unique identifier for this node, which should be set from the global innovation database method getNextGenomeID.
  *  
- *  All references in the Genotype are literal (i.e. no pointers)
+ *  All references in the Genotype are literal (i.e. no pointers).
  */
 @property int nodeID;
 
@@ -57,8 +57,8 @@ typedef enum NodeType {
  */
 @property NodeType nodeType;
 
-/** The position within the network
- *  Vales between 0 and 1
+/** The position within the network.
+ *  Vales between 0 and 1.
  */
 @property CGPoint nodePosition;
 

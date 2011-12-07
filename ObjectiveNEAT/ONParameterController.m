@@ -32,6 +32,7 @@ static int youngSpeciesAgeThreshold;
 static double youngSpeciesFitnessBonus;
 static int oldSpeciesAgeThreshold;
 static double oldSpeciesFitnessBonus;
+static int randomSeed;
 
 +(Boolean) loadParametersFromPList: (NSString *) filename {
     if (filename == nil) {
@@ -81,6 +82,7 @@ static double oldSpeciesFitnessBonus;
     youngSpeciesFitnessBonus = [(NSNumber *) [temp objectForKey:@"young_species_fitness_bonus"] doubleValue];
     oldSpeciesAgeThreshold = [(NSNumber *) [temp objectForKey:@"old_species_age_threshold"] intValue];
     oldSpeciesFitnessBonus = [(NSNumber *) [temp objectForKey:@"old_species_fitness_penalty"] doubleValue];
+    randomSeed = [(NSNumber *) [temp objectForKey:@"random_seed"] intValue];
     return TRUE;
 }
 
@@ -170,6 +172,9 @@ static double oldSpeciesFitnessBonus;
 
 +(double) oldSpeciesFitnessBonus {
     return oldSpeciesFitnessBonus;
+}
++(int) randomSeed {
+    return randomSeed;
 }
 
 @end

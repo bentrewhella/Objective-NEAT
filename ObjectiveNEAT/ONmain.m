@@ -18,11 +18,6 @@ int main (int argc, const char * argv[])
 {
 
     @autoreleasepool {
-        
-        // set up random number generator for repeatability (or not)
-        //srand ((uint) time(NULL));
-        srand (0);
-        
         // load files
         if (argc == 2) {
             NSString * filename = [NSString stringWithCString:argv[1] encoding:NSUTF8StringEncoding];
@@ -31,7 +26,7 @@ int main (int argc, const char * argv[])
         else {
             [ONParameterController loadParametersFromPList:nil];
         }
-                
+        
         ONxorExperiment * xorExperiment = [[ONxorExperiment alloc] init];
         [xorExperiment runExperiment];
         

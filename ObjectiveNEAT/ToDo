@@ -1,6 +1,7 @@
 1. Finish documentation
-2. Bug - not picking up highest fitness of while population
+ - ONSpecies. ONPOpulation, ONxorExperiment
+ 
+2. GNU license
 
-Questions 
-- should we add the excess / disjoint genes from the less fit parent (see ONGenome crossover)
+
 

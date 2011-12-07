@@ -53,7 +53,12 @@
 }
 
 -(void) reportResults {
-    NSLog(@"Winner is %@", [solutionOrganism.genome description]);
+    if (solutionOrganism != nil) {
+        NSLog(@"Winner is %@", [solutionOrganism.genome description]);
+    }
+    else {
+        NSLog(@"Unable to find a solution in %d generations", thePopulation.generation);
+    }
 }
 
 @end

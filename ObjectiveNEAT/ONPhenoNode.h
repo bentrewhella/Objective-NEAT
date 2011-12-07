@@ -119,6 +119,5 @@
  */ 
 double fsigmoid(double activesum, double slope, double constant);
 
-double sigmoid(float netinput, float response);
 
 @end

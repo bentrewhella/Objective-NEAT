@@ -62,7 +62,10 @@
 /** An array of the output nodes */
 @property (retain) NSMutableArray * outputNodes;
 
-
+/**
+ * Initialise the network.
+ * Converts the genome into a working network which can be activated to obtain a solution.
+ */
 - (id)initWithGenome:(ONGenome *) genotype;
 
 /**

@@ -28,6 +28,13 @@
 
 @property bool solutionFound;
 
+
+/**
+ * Performs any set up required.
+ * In base class sets the random seed.
+ */
+-(void) initialiseExperiment;
+
 /**
  * Returns the initial Genome.  Subclasses can create a genome here using convenience methods or file loaders. 
  */
@@ -36,12 +43,12 @@
 /** 
  * Generate the initial population from the initial Genome.
  *
- * Can be overridden but is not really necessary */
+ * Can be overridden but will provide a simple 2 in, 1 bias and 1 output if not */
 -(void) initialisePopulation;
 
 /** Runs the experiment.
  *
- * Starts by initialising a population using a population 
+ * Starts by initialising a population using a population.
  * consisting of the simplest genome possible with randomised weights.
  *
  * Then selects the top performing Organisms and begins crossover and mutation to create the next population.
@@ -54,7 +61,7 @@
 /** 
  * Evaluate any given organism and assign fitness.
  * 
- * This is usually subclassed to create a new experiment 
+ * This is usually subclassed to create a new experiment .
  * 
  * Overriding methods should follow a process something like:
  * 1. Update sensors
@@ -64,11 +71,17 @@
 -(void) evaluateOrganism: (ONOrganism *) subject;
 
 /**
- * iterates through the population and evaluates each individual.
- * Should not need overridden if requried
+ * Iterates through the population and evaluates each individual.
+ * Should not need to be overridden unless required.
  */
 -(void) evaluatePopulation;
 
+
+/**
+ * Called once the experiment has been completed, 
+ * either by a solution being found, or by all generations being run without a solution being found.
+ */
+ 
 -(void) reportResults;
 
 
