@@ -1,0 +1,23 @@
+ObjectiveNEAT 0.1.0 by Ben Trewhella
+
+An implementation of Ken Stanley & Risto Miikkulainen's NEAT algorithm.
+
+Feel free to use or adapt this implementation in your own Mac or iOS apps.
+
+At this stage the only solution presented is for the reference XOR network.
+ 
+Known bugs:
+1) Memory management.  
+This is a first attempt to use Automatic Reference Counting, and it contains leaks (developer fault no doubt).  
+Next version to use good old memory management.
+
+2) Algorithm should be finding XOR faster.  
+I feel this is because nodes do not have an activation threshold (which helps XOR greatly).  It looks like the reference implementation does not use thresholds either, and my understanding is that NEAT should optimise using link weights and activations, however I will play with this to find the best results.
+
+Roadmap
+- Include the pole balancing experiments.
+- Add rtNEAT and HyperNEAT functionality.
+- Provide visualisations of networks and solutions for Mac / iOS devices.
+- Provide more visual and interactive experiments.
+- As an offshoot with Opposable Games develop into simple games demonstrating the technique.
+- Use as a methodology for curated world generation (much later).

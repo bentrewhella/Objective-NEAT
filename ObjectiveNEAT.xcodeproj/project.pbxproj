@@ -79,7 +79,7 @@
 /* Begin PBXFileReference section */
 		B588FCD0148E7B2A001710F6 /* ONSpecies.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ONSpecies.h; sourceTree = "<group>"; };
 		B588FCD1148E7B2A001710F6 /* ONSpecies.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ONSpecies.m; sourceTree = "<group>"; };
-		B5C6F71D148E32900047855A /* ToDo */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ToDo; sourceTree = "<group>"; };
+		B588FD071490BCC5001710F6 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
 		D10B1D4614825D2D00E7BCB0 /* ObjectiveNEAT */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ObjectiveNEAT; sourceTree = BUILT_PRODUCTS_DIR; };
 		D10B1D4A14825D2D00E7BCB0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D10B1D4D14825D2D00E7BCB0 /* ONmain.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ONmain.m; sourceTree = "<group>"; };
@@ -189,7 +189,7 @@
 				D10B1E351486732700E7BCB0 /* Populations */,
 				D10B1DB11484E85E00E7BCB0 /* Experiments */,
 				D10B1D4D14825D2D00E7BCB0 /* ONmain.m */,
-				B5C6F71D148E32900047855A /* ToDo */,
+				B588FD071490BCC5001710F6 /* README */,
 				D10B1D4F14825D2D00E7BCB0 /* Supporting Files */,
 			);
 			path = ObjectiveNEAT;
