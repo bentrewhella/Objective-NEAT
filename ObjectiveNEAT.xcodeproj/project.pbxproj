@@ -44,9 +44,7 @@
 		D144FD3F14890A7D00C6FD93 /* ONPopulation.m in Sources */ = {isa = PBXBuildFile; fileRef = D10B1E371486752F00E7BCB0 /* ONPopulation.m */; };
 		D144FD4014890A7D00C6FD93 /* ONExperiment.m in Sources */ = {isa = PBXBuildFile; fileRef = D10B1DA41483C16A00E7BCB0 /* ONExperiment.m */; };
 		D144FD4114890A7D00C6FD93 /* ONxorExperiment.m in Sources */ = {isa = PBXBuildFile; fileRef = D144FD361488C87D00C6FD93 /* ONxorExperiment.m */; };
-		D144FD4214890AD900C6FD93 /* p2blank.plist in CopyFiles */ = {isa = PBXBuildFile; fileRef = D10B1D751482EEAF00E7BCB0 /* p2blank.plist */; };
 		D144FD4314890AE100C6FD93 /* p2test.plist in Resources */ = {isa = PBXBuildFile; fileRef = D10B1D7114827FA100E7BCB0 /* p2test.plist */; };
-		D144FD4414890AE100C6FD93 /* p2blank.plist in Resources */ = {isa = PBXBuildFile; fileRef = D10B1D751482EEAF00E7BCB0 /* p2blank.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -68,7 +66,6 @@
 			dstPath = .;
 			dstSubfolderSpec = 16;
 			files = (
-				D144FD4214890AD900C6FD93 /* p2blank.plist in CopyFiles */,
 				D10B1E2C1485744200E7BCB0 /* p2test.plist in CopyFiles */,
 				D10B1D5214825D2D00E7BCB0 /* ObjectiveNEAT.1 in CopyFiles */,
 			);
@@ -96,7 +93,6 @@
 		D10B1D7114827FA100E7BCB0 /* p2test.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = p2test.plist; sourceTree = "<group>"; };
 		D10B1D72148280B100E7BCB0 /* ONParameterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ONParameterController.h; sourceTree = "<group>"; };
 		D10B1D73148280B100E7BCB0 /* ONParameterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ONParameterController.m; sourceTree = "<group>"; };
-		D10B1D751482EEAF00E7BCB0 /* p2blank.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = p2blank.plist; sourceTree = "<group>"; };
 		D10B1D7C1482F04300E7BCB0 /* ONUnitTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ONUnitTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D10B1D7D1482F04300E7BCB0 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		D10B1D7F1482F04300E7BCB0 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
@@ -210,7 +206,6 @@
 				D10B1D72148280B100E7BCB0 /* ONParameterController.h */,
 				D10B1D73148280B100E7BCB0 /* ONParameterController.m */,
 				D10B1D7114827FA100E7BCB0 /* p2test.plist */,
-				D10B1D751482EEAF00E7BCB0 /* p2blank.plist */,
 			);
 			name = "Parameter Files";
 			sourceTree = "<group>";
@@ -380,7 +375,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D144FD4314890AE100C6FD93 /* p2test.plist in Resources */,
-				D144FD4414890AE100C6FD93 /* p2blank.plist in Resources */,
 				D10B1D8A1482F04300E7BCB0 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
