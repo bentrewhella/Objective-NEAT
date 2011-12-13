@@ -29,17 +29,21 @@
 #import "ONNetwork.h"
 
 @implementation ONOrganism
-@synthesize genome, network, fitness;
+@synthesize genome, fitness;
 
 
 - (id)initWithGenome: (ONGenome *) dna 
 {
     self = [super init];
     if (self) {
-        genome = dna;
+        genome = [dna retain];
         fitness = 0;
     }
     return self;
+}
+
+-(ONNetwork *) network {
+    return network;
 }
 
 -(void) developNetwork {
@@ -48,6 +52,7 @@
 }
 
 -(void) destroyNetwork {
+    [network release];
     network = nil;
 }
 
@@ -55,6 +60,7 @@
     ONGenome * childGenome = [genome copy];
     [childGenome mutateGenome];
     ONOrganism * childOrganism = [[ONOrganism alloc] initWithGenome:childGenome];
+    [childGenome release];
     return childOrganism;
 }
 
@@ -62,6 +68,7 @@
     ONGenome * childGenome = [genome offspringWithGenome: lessFitMate.genome];
     [childGenome mutateGenome];
     ONOrganism * childOrganism = [[ONOrganism alloc] initWithGenome:childGenome];
+    [childGenome release];
     return childOrganism;
 }
 
@@ -85,6 +92,14 @@
 
 -(NSString *) description {
     return [NSString stringWithFormat: @"Organism with fitness: %1.3f", fitness];   
+}
+
+-(void) dealloc {
+    if (network != nil) {
+        [network release];
+    }
+    [genome release];
+    [super dealloc];
 }
 
 

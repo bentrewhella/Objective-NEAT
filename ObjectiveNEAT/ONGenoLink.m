@@ -75,4 +75,8 @@
     return copiedGenoLink;
 }
 
+-(void) dealloc {
+    [super dealloc];
+}
+
 @end

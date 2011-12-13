@@ -59,28 +59,38 @@
     [self initialiseExperiment];
     solutionFound = false;
     // initialise the population
+    NSAutoreleasePool * tempPool = [[NSAutoreleasePool alloc] init];
     [self initialisePopulation]; 
     [self evaluatePopulation];
+    [tempPool drain];
     while (!solutionFound && thePopulation.generation < [ONParameterController numGenerations]) {
+        tempPool = [[NSAutoreleasePool alloc] init];
         [thePopulation rePopulateFromFittest];
         NSLog(@"%@", [thePopulation description]);
         [self evaluatePopulation];
+        [tempPool drain];
     }
     [self reportResults];
 }
 
 -(void) evaluatePopulation {
     for (ONOrganism * nextOrganism in thePopulation.allOrganisms) {
+        
         [nextOrganism developNetwork];
-        
+
         [self evaluateOrganism: nextOrganism];
-        
+
         [nextOrganism destroyNetwork];
     }
 }
 
 -(void) reportResults {
     // called when the experiment ends, override as required
+}
+
+-(void) dealloc {
+    [thePopulation release];
+    [super dealloc];
 }
 
 @end

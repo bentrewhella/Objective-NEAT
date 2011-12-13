@@ -70,7 +70,7 @@
  * A pointer to the ONGenoNode or ONGenoLink, 
  * which in turn can be consulted for more information on the Innovation.
  */
-@property (copy) id nodeOrLink;
+@property (assign) id nodeOrLink;
 
 /** The literal (non-pointer) reference to the node preceeding this node / acting as input to the link */
 @property int fromNodeID;

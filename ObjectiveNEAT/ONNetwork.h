@@ -72,13 +72,13 @@
 @property int numLinks;
 
 /** An array of all nodes in the network */
-@property (retain) NSMutableArray * allNodes;
+@property (assign) NSMutableArray * allNodes;
 
 /** An array of the input nodes */
-@property (retain) NSMutableArray * inputNodes;
+@property (assign) NSMutableArray * inputNodes;
 
 /** An array of the output nodes */
-@property (retain) NSMutableArray * outputNodes;
+@property (assign) NSMutableArray * outputNodes;
 
 /**
  * Initialise the network.

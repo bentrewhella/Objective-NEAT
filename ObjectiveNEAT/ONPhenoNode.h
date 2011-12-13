@@ -83,10 +83,10 @@
 
 
 /** An array of incoming links, i.e. whose weighted output will be evaluated as input to the node. */
-@property (retain) NSMutableArray * incomingPhenoLinks;
+@property (assign) NSMutableArray * incomingPhenoLinks;
 
 /** An array of outgoing links, i.e. the value of this neural node will be passed as input to these links. */
-@property (retain) NSMutableArray * outgoingPhenoLinks;
+@property (assign) NSMutableArray * outgoingPhenoLinks;
 
 /** The value of the node.
  *
@@ -114,6 +114,8 @@
  * At this stage this is just the sigmoid function
  */
 -(void) activate;
+
+-(void) clearLinks;
 
 /** Sigmoid Function
  *

@@ -60,6 +60,7 @@ static int speciesCounter = 0;
     }
     speciesFitnessTotal += org.fitness;
     if (org.fitness > fittestOrganism.fitness) {
+        [fittestOrganism release];
         fittestOrganism = [org copy];
         ageSinceImprovement = 0;
     }
@@ -126,13 +127,20 @@ static int speciesCounter = 0;
         if (dadOrganism == mumOrganism || randomDouble() < [ONParameterController mutateWeightOnlyDontCrossover]) {
             ONOrganism * childOrganism = [dadOrganism reproduceChildOrganism];
             [newOrganisms addObject:childOrganism];
+            [childOrganism release];
         }
         else {
             ONOrganism * childOrganism = [dadOrganism reproduceChildOrganismWithOrganism: mumOrganism];
             [newOrganisms addObject:childOrganism];
+            [childOrganism release];
         }
     }
     return newOrganisms;
+}
+
+-(void) dealloc {
+    [speciesOrganisms release];
+    [super dealloc];
 }
 
 @end

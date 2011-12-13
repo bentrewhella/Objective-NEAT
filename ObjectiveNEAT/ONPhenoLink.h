@@ -44,17 +44,15 @@
 
 
 /** A pointer to the links originating node */
-@property (retain) ONPhenoNode *  fromNode;
+@property (assign) ONPhenoNode * fromNode;
 
 /** A pointer to the links terminating node */
-@property (retain) ONPhenoNode *  toNode;
+@property (assign) ONPhenoNode * toNode;
 
 /** The weight connection of the link */
 @property double weight;
 
 /** Indicates if the link is active or should be ignored */
 @property bool isEnabled;
-
-
 
 @end

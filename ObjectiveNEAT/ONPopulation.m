@@ -81,9 +81,11 @@
             [newSpecies addOrganism:nextOrganism];
             sumFitness += nextOrganism.fitness;
             [allSpecies addObject:newSpecies];
+            [newSpecies release];
         }
         
         if (nextOrganism.fitness > fittestOrganismEver.fitness) {
+            [fittestOrganismEver release];
             fittestOrganismEver = [nextOrganism copy];
         }
     }
@@ -105,7 +107,9 @@
     for (ONSpecies * nextSpecies in allSpecies) {
         // need to improve this so fitter species create more organisms
         int numberToCreate = (int) [nextSpecies numberToSpawnBasedOnAverageFitness:averageFitness] + 1;
-        [allOrganisms addObjectsFromArray:[nextSpecies spawnOrganisms:numberToCreate]];
+        NSArray * newGeneration = [nextSpecies spawnOrganisms:numberToCreate];
+        [allOrganisms addObjectsFromArray:newGeneration];
+        [newGeneration release];
     }
     generation++;
     
@@ -122,17 +126,27 @@
     ONPopulation * newPopulation = [[ONPopulation alloc] init];
     
     ONOrganism * firstLife = [[ONOrganism alloc] initWithGenome: genesisGenome];
+    [genesisGenome release];
     
     [newPopulation.allOrganisms addObject:firstLife];
+    [firstLife release];
     
     int nOrganisms = [ONParameterController populationSize] - 1; // we've already added one
     
     for (int i = 0; i < nOrganisms; i++) {
         ONGenome * newGenome = [[genesisGenome copy] randomiseWeights];
         ONOrganism *nextLife = [[ONOrganism alloc] initWithGenome: newGenome];
+        [newGenome release];
         [newPopulation.allOrganisms addObject:nextLife];
+        [nextLife release];
     }
     return newPopulation;
+}
+
+-(void) dealloc {
+    [allOrganisms release];
+    [allSpecies release];
+    [super dealloc];
 }
 
 @end

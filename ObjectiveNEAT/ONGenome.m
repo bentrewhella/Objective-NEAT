@@ -155,11 +155,13 @@ static bool genesisOccurred = false;
                                                                                toNode: randomToNode.nodeID
                                                                            withWeight:randomClampedDouble()];
         [genoLinks addObject:newGenoLink];
+        [newGenoLink release];
         // we can be sure this is a new link so add to innovation database
         [[ONInnovationDB sharedDB] insertNewLink:newGenoLink fromNode:randomFromNode.nodeID toNode:randomToNode.nodeID];
     }
     else {
         [genoLinks addObject:existingLink];
+        [existingLink release];
     }
 }
 
@@ -184,6 +186,7 @@ static bool genesisOccurred = false;
         newNode.nodePosition = CGPointMake(fromNode.nodePosition.x + ((toNode.nodePosition.x - fromNode.nodePosition.x) / 2),
                                            fromNode.nodePosition.y + ((toNode.nodePosition.y - fromNode.nodePosition.y) / 2));
         [genoNodes addObject: newNode];
+        [newNode release];
         // we can be sure this is a new node so add to innovation database
         [[ONInnovationDB sharedDB] insertNewNode:newNode fromNode:randomLink.fromNode toNode:randomLink.toNode];
         
@@ -192,6 +195,7 @@ static bool genesisOccurred = false;
                                                                                     toNode: newNode.nodeID 
                                                                                 withWeight:1.0];
         [genoLinks addObject:newPrecursorLink];
+        [newPrecursorLink release];
         // we can be sure this is a new link so add to innovation database
         [[ONInnovationDB sharedDB] insertNewLink:newPrecursorLink fromNode:fromNode.nodeID toNode:newNode.nodeID];
         
@@ -199,6 +203,7 @@ static bool genesisOccurred = false;
                                                                                     toNode: toNode.nodeID 
                                                                                 withWeight: randomLink.weight];
         [genoLinks addObject:newSuccessorLink];
+        [newSuccessorLink release];
         // we can be sure this is a new link so add to innovation database
         [[ONInnovationDB sharedDB] insertNewLink:newSuccessorLink fromNode:newNode.nodeID toNode:toNode.nodeID];
         
@@ -210,16 +215,19 @@ static bool genesisOccurred = false;
         if ([self getNodeWithID:existingNode.nodeID] == nil) {
             
             [genoNodes addObject:existingNode];
+            [existingNode release];
             
             ONGenoLink * precursorLink = [[ONInnovationDB sharedDB] possibleLinkExistsFromNode:fromNode.nodeID toNode:existingNode.nodeID];
             NSAssert(precursorLink != nil, @"Have picked up an existing node from innovations DB without an existing link");
             precursorLink.weight = 1.0;
             [genoLinks addObject:precursorLink];
+            [precursorLink release];
             
             ONGenoLink * successorLink = [[ONInnovationDB sharedDB] possibleLinkExistsFromNode:existingNode.nodeID toNode:toNode.nodeID];
             NSAssert(successorLink != nil, @"Have picked up an existing node from innovations DB without an existing link");
             successorLink.weight = randomLink.weight;
             [genoLinks addObject:successorLink];
+            [successorLink release];
             
             randomLink.isEnabled = false;
         }
@@ -267,10 +275,14 @@ static bool genesisOccurred = false;
         if (dadNextLink.linkID == mumNextLink.linkID) {
             // shared gene, choose one at random
             if (randomDouble() < 0.5) {
-                [childGenome.genoLinks addObject:[dadNextLink copy]];
+                ONGenoLink * dadLink = [dadNextLink copy];
+                [childGenome.genoLinks addObject:dadLink];
+                [dadLink release];
             }
             else {
-                [childGenome.genoLinks addObject:[mumNextLink copy]];
+                ONGenoLink * mumLink = [mumNextLink copy];
+                [childGenome.genoLinks addObject:mumLink];
+                [mumLink release];
             }
             dadIndex++;
             if (dadIndex == genoLinks.count) {
@@ -289,7 +301,9 @@ static bool genesisOccurred = false;
         }
         // disjoint gene
         else if (dadNextLink.linkID < mumNextLink.linkID) {
-            [childGenome.genoLinks addObject:[dadNextLink copy]];
+            ONGenoLink * dadLink = [dadNextLink copy];
+            [childGenome.genoLinks addObject:dadLink];
+            [dadLink release];
             dadIndex++;
             if (dadIndex == genoLinks.count) {
                 dadHasLinksLeft = false;
@@ -302,7 +316,9 @@ static bool genesisOccurred = false;
         // disjoint gene
         else if (mumNextLink.linkID < dadNextLink.linkID) {
             // don't do anything - we ignore the less fit link
-            [childGenome.genoLinks addObject:[mumNextLink copy]];  // should do this but it seems to get good results
+            ONGenoLink * mumLink = [mumNextLink copy];
+            [childGenome.genoLinks addObject:mumLink];  // should do this but it seems to get good results
+            [mumLink release];
             mumIndex++;
             if (mumIndex == mumGenome.genoLinks.count) {
                 mumHasLinksLeft = false;
@@ -313,7 +329,9 @@ static bool genesisOccurred = false;
         }
     }
     while (dadHasLinksLeft) {
-        [childGenome.genoLinks addObject:[dadNextLink copy]];
+        ONGenoLink * dadLink = [dadNextLink copy];
+        [childGenome.genoLinks addObject:dadLink];
+        [dadLink release];
         dadIndex++;
         if (dadIndex == genoLinks.count) {
             dadHasLinksLeft = false;
@@ -340,11 +358,13 @@ static bool genesisOccurred = false;
             ONGenoNode * nodeToAdd = [[ONInnovationDB sharedDB] getNodeWithID:nextLink.fromNode];
             NSAssert(nodeToAdd != nil, @"Error - have created a link with a node that does not exist in the Innovation DB");
             [childGenome.genoNodes addObject: nodeToAdd];
+            [nodeToAdd release];
         }
         if ([childGenome getNodeWithID: nextLink.toNode] == nil) {
             ONGenoNode * nodeToAdd = [[ONInnovationDB sharedDB] getNodeWithID:nextLink.toNode];
             NSAssert(nodeToAdd != nil, @"Error - have created a link with a node that does not exist in the Innovation DB");
             [childGenome.genoNodes addObject: nodeToAdd];
+            [nodeToAdd release];
         }
 
     }
@@ -440,10 +460,14 @@ static bool genesisOccurred = false;
 -(ONGenome *) copyWithZone: (NSZone *) zone {
     ONGenome * copiedGenome = [[ONGenome alloc] init];
     for (ONGenoNode * nextNode in genoNodes) {
-        [copiedGenome.genoNodes addObject: [nextNode copy]];
+        ONGenoNode * newNode = [nextNode copy];
+        [copiedGenome.genoNodes addObject: newNode];
+        [newNode release];
     }
     for (ONGenoLink * nextLink in genoLinks) {
-        [copiedGenome.genoLinks addObject: [nextLink copy]];
+        ONGenoLink * newLink = [nextLink copy];
+        [copiedGenome.genoLinks addObject: newLink];
+        [newLink release];
     }
     return copiedGenome;
 }
@@ -472,6 +496,18 @@ static bool genesisOccurred = false;
     }
 }
 
+-(void) dealloc {
+    if (genoNodes != nil) {
+        [genoNodes release];
+        genoNodes = nil;
+    }
+    if (genoLinks != nil) {
+        [genoLinks release];
+        genoLinks = nil;
+    }
+    [super dealloc];
+}
+
 +(ONGenome *) createSimpleGenomeWithInputs: (int) nInputs outputs: (int) nOutputs {
     NSAssert (!genesisOccurred, @"Genesis cannot occur more than once! "
               "This would really screw up the innovation database. "
@@ -489,6 +525,7 @@ static bool genesisOccurred = false;
         inputNode.nodeType = INPUT;
         inputNode.nodePosition = CGPointMake(0.1+i*positionXOffset, 0.1);
         [newGenome.genoNodes addObject: inputNode];
+        [inputNode release];
         // we can be sure this is a new node so add to innovation database
         [[ONInnovationDB sharedDB] insertNewNode:inputNode fromNode:0 toNode:0];
     }
@@ -499,6 +536,7 @@ static bool genesisOccurred = false;
     biasNode.nodeType = BIAS;
     biasNode.nodePosition = CGPointMake(0.9, 0.1);
     [newGenome.genoNodes addObject: biasNode];
+    [biasNode release];
     // we can be sure this is a new node so add to innovation database
     [[ONInnovationDB sharedDB] insertNewNode:biasNode fromNode:0 toNode:0];
     nInputs++; // we want to include this as an input node from now on
@@ -511,6 +549,7 @@ static bool genesisOccurred = false;
         outputNode.nodeType = OUTPUT;
         outputNode.nodePosition = CGPointMake((i+1)*positionXOffset, 0.9);
         [newGenome.genoNodes addObject: outputNode];
+        [outputNode release];
         // we can be sure this is a new node so add to innovation database
         [[ONInnovationDB sharedDB] insertNewNode:outputNode fromNode:0 toNode:0];
     }
@@ -524,6 +563,7 @@ static bool genesisOccurred = false;
                                                                                    toNode: tNode.nodeID
                                                                                withWeight:randomClampedDouble()];
             [newGenome.genoLinks addObject:newGenoLink];
+            [newGenoLink release];
             // we can be sure this is a new link so add to innovation database
             [[ONInnovationDB sharedDB] insertNewLink:newGenoLink fromNode:fNode.nodeID toNode:tNode.nodeID];
             
@@ -550,6 +590,7 @@ static bool genesisOccurred = false;
         inputNode.nodeType = INPUT;
         inputNode.nodePosition = CGPointMake(0.1+i*positionXOffset, 0.1);
         [newGenome.genoNodes addObject: inputNode];
+        [inputNode release];
         // we can be sure this is a new node so add to innovation database
         [[ONInnovationDB sharedDB] insertNewNode:inputNode fromNode:0 toNode:0];
     }
@@ -560,6 +601,7 @@ static bool genesisOccurred = false;
     hiddenNode.nodeType = HIDDEN;
     hiddenNode.nodePosition = CGPointMake(0.5, 0.5);
     [newGenome.genoNodes addObject: hiddenNode];
+    [hiddenNode release];
     // we can be sure this is a new node so add to innovation database
     [[ONInnovationDB sharedDB] insertNewNode:hiddenNode fromNode:0 toNode:4];
     
@@ -569,6 +611,7 @@ static bool genesisOccurred = false;
     hiddenNode2.nodeType = HIDDEN;
     hiddenNode2.nodePosition = CGPointMake(0.5, 0.5);
     [newGenome.genoNodes addObject: hiddenNode2];
+    [hiddenNode2 release];
     // we can be sure this is a new node so add to innovation database
     [[ONInnovationDB sharedDB] insertNewNode:hiddenNode2 fromNode:1 toNode:4];
     
@@ -579,6 +622,7 @@ static bool genesisOccurred = false;
     outputNode.nodeType = OUTPUT;
     outputNode.nodePosition = CGPointMake(positionXOffset, 0.9);
     [newGenome.genoNodes addObject: outputNode];
+    [outputNode release];
     // we can be sure this is a new node so add to innovation database
     [[ONInnovationDB sharedDB] insertNewNode:outputNode fromNode:0 toNode:0];
     
@@ -589,6 +633,7 @@ static bool genesisOccurred = false;
                                                                            toNode: tNode.nodeID
                                                                        withWeight:1];
     [newGenome.genoLinks addObject:link1];
+    [link1 release];
     // we can be sure this is a new link so add to innovation database
     [[ONInnovationDB sharedDB] insertNewLink:link1 fromNode:fNode.nodeID toNode:tNode.nodeID];
     
@@ -598,6 +643,7 @@ static bool genesisOccurred = false;
                                                                            toNode: tNode.nodeID
                                                                        withWeight:-1];
     [newGenome.genoLinks addObject:link2];
+    [link2 release];
     // we can be sure this is a new link so add to innovation database
     [[ONInnovationDB sharedDB] insertNewLink:link2 fromNode:fNode.nodeID toNode:tNode.nodeID];
     
@@ -607,6 +653,7 @@ static bool genesisOccurred = false;
                                                                      toNode: tNode.nodeID
                                                                  withWeight:-1];
     [newGenome.genoLinks addObject:link3];
+    [link3 release];
     // we can be sure this is a new link so add to innovation database
     [[ONInnovationDB sharedDB] insertNewLink:link3 fromNode:fNode.nodeID toNode:tNode.nodeID];
 
@@ -617,6 +664,7 @@ static bool genesisOccurred = false;
                                                                      toNode: tNode.nodeID
                                                                  withWeight: 1];
     [newGenome.genoLinks addObject:link4];
+    [link4 release];
     // we can be sure this is a new link so add to innovation database
     [[ONInnovationDB sharedDB] insertNewLink:link4 fromNode:fNode.nodeID toNode:tNode.nodeID];
     
@@ -626,6 +674,7 @@ static bool genesisOccurred = false;
                                                                      toNode: tNode.nodeID
                                                                  withWeight: 1];
     [newGenome.genoLinks addObject:link5];
+    [link5 release];
     // we can be sure this is a new link so add to innovation database
     [[ONInnovationDB sharedDB] insertNewLink:link5 fromNode:fNode.nodeID toNode:tNode.nodeID];
     
@@ -635,6 +684,7 @@ static bool genesisOccurred = false;
                                                                      toNode: tNode.nodeID
                                                                  withWeight: 1];
     [newGenome.genoLinks addObject:link6];
+    [link6 release];
     // we can be sure this is a new link so add to innovation database
     [[ONInnovationDB sharedDB] insertNewLink:link6 fromNode:fNode.nodeID toNode:tNode.nodeID];
     

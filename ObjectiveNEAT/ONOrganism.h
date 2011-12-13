@@ -51,10 +51,11 @@
 }
 
 /** The genome of the organism - should be set with initialiser. */
-@property (retain) ONGenome * genome;
+@property (assign) ONGenome * genome;
 
 /** the neural network that is created by the genome. */
-@property (retain) ONNetwork * network;
+-(ONNetwork *) network;
+//@property (copy) ONNetwork * network;
 
 /** The fitness of the organism. */
 @property double fitness;

@@ -47,7 +47,7 @@ int main (int argc, const char * argv[])
         
         ONxorExperiment * xorExperiment = [[ONxorExperiment alloc] init];
         [xorExperiment runExperiment];
-        
+        [xorExperiment release];
     }
     return 0;
 }

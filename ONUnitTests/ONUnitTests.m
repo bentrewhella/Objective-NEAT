@@ -35,14 +35,12 @@
 {
     STAssertTrue([ONParameterController loadParametersFromPList:@"p2blank"], 
                  @"Failed to load specified parameters file");
-    STAssertEquals(2, [ONParameterController numRuns], @"Number of Runs value not set to test case - specified parameters file not loaded properly");
     
     STAssertTrue([ONParameterController loadParametersFromPList:@"p2blank.plist"], 
                  @"Failed to load file with filename extension passed in (albeit incorrectly)");
     
     STAssertTrue([ONParameterController loadParametersFromPList:nil], 
                  @"Failed to load default parameters file");
-    STAssertEquals(1, [ONParameterController numRuns], @"Number of Runs value not loaded correctly");
 }
 
 /*
@@ -65,6 +63,7 @@
 -(void) testAddNodeDoesNotChangeValue {
     [ONParameterController loadParametersFromPList:nil];
     genome2by2 = [ONGenome createSimpleGenomeWithInputs:2 outputs:2];
+    [genome2by2 release];
     ONOrganism * firstOrganism = [[ONOrganism alloc] initWithGenome:genome2by2];
     [firstOrganism developNetwork];
     ONxorExperiment *xorExperiment = [[ONxorExperiment alloc] init];

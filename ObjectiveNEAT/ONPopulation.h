@@ -43,10 +43,10 @@
 }
 
 /** The array of currently existing organisms */
-@property (retain) NSMutableArray * allOrganisms;
+@property (assign) NSMutableArray * allOrganisms;
 
 /** An array of all the existing species */
-@property (retain) NSMutableArray * allSpecies;
+@property (assign) NSMutableArray * allSpecies;
 
 /** The current number of complete population changes - also know as epochs. */
 @property int generation;

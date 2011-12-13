@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B503EC1414979B5500E67089 /* ONSpecies.m in Sources */ = {isa = PBXBuildFile; fileRef = B588FCD1148E7B2A001710F6 /* ONSpecies.m */; };
 		B588FCD2148E7B2A001710F6 /* ONSpecies.m in Sources */ = {isa = PBXBuildFile; fileRef = B588FCD1148E7B2A001710F6 /* ONSpecies.m */; };
 		D10B1D4B14825D2D00E7BCB0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D10B1D4A14825D2D00E7BCB0 /* Foundation.framework */; };
 		D10B1D4E14825D2D00E7BCB0 /* ONmain.m in Sources */ = {isa = PBXBuildFile; fileRef = D10B1D4D14825D2D00E7BCB0 /* ONmain.m */; };
@@ -74,9 +75,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B503EC1A1497ADAA00E67089 /* ToDo.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ToDo.txt; sourceTree = "<group>"; };
 		B588FCD0148E7B2A001710F6 /* ONSpecies.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ONSpecies.h; sourceTree = "<group>"; };
 		B588FCD1148E7B2A001710F6 /* ONSpecies.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ONSpecies.m; sourceTree = "<group>"; };
 		B588FD071490BCC5001710F6 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
+		B588FE3A1490D12B001710F6 /* html Documentation.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = "html Documentation.zip"; sourceTree = "<group>"; };
 		D10B1D4614825D2D00E7BCB0 /* ObjectiveNEAT */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ObjectiveNEAT; sourceTree = BUILT_PRODUCTS_DIR; };
 		D10B1D4A14825D2D00E7BCB0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D10B1D4D14825D2D00E7BCB0 /* ONmain.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ONmain.m; sourceTree = "<group>"; };
@@ -145,6 +148,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B588FE381490D115001710F6 /* Documentation */ = {
+			isa = PBXGroup;
+			children = (
+				B588FE3A1490D12B001710F6 /* html Documentation.zip */,
+			);
+			name = Documentation;
+			sourceTree = "<group>";
+		};
 		D10B1D3B14825D2D00E7BCB0 = {
 			isa = PBXGroup;
 			children = (
@@ -178,6 +189,7 @@
 		D10B1D4C14825D2D00E7BCB0 /* ObjectiveNEAT */ = {
 			isa = PBXGroup;
 			children = (
+				B588FE381490D115001710F6 /* Documentation */,
 				D10B1DE11484F7E000E7BCB0 /* Utilities */,
 				D10B1D6F14827EF900E7BCB0 /* Parameter Files */,
 				D10B1DAE1484E83500E7BCB0 /* Genotype */,
@@ -186,6 +198,7 @@
 				D10B1DB11484E85E00E7BCB0 /* Experiments */,
 				D10B1D4D14825D2D00E7BCB0 /* ONmain.m */,
 				B588FD071490BCC5001710F6 /* README */,
+				B503EC1A1497ADAA00E67089 /* ToDo.txt */,
 				D10B1D4F14825D2D00E7BCB0 /* Supporting Files */,
 			);
 			path = ObjectiveNEAT;
@@ -425,6 +438,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B503EC1414979B5500E67089 /* ONSpecies.m in Sources */,
 				D144FD3C14890A7D00C6FD93 /* ONInnovation.m in Sources */,
 				D144FD3D14890A7D00C6FD93 /* ONInnovationDB.m in Sources */,
 				D144FD3E14890A7D00C6FD93 /* ONOrganism.m in Sources */,
@@ -462,7 +476,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -480,6 +494,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = YES;
+				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = macosx;
 			};
 			name = Debug;
@@ -489,7 +504,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -500,6 +515,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				RUN_CLANG_STATIC_ANALYZER = YES;
 				SDKROOT = macosx;
 			};
 			name = Release;
@@ -507,6 +523,7 @@
 		D10B1D5614825D2D00E7BCB0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ObjectiveNEAT/ObjectiveNEAT-Prefix.pch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -516,6 +533,7 @@
 		D10B1D5714825D2D00E7BCB0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ObjectiveNEAT/ObjectiveNEAT-Prefix.pch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -525,6 +543,7 @@
 		D10B1D901482F04300E7BCB0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ONUnitTests/ONUnitTests-Prefix.pch";
@@ -537,6 +556,7 @@
 		D10B1D911482F04300E7BCB0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ONUnitTests/ONUnitTests-Prefix.pch";

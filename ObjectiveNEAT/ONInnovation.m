@@ -44,6 +44,10 @@
     }
     return @"unknown";
 }
+-(void) dealloc {
+    [nodeOrLink release];
+    [super dealloc];
+}
 
 
 @end

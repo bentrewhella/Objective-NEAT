@@ -1,0 +1,7 @@
+1.  Memory exception when clearing the population - upon releasing all organisms, need to check the reference counts for each
+
+2. Control population - is getting out of control quickly
+
+3. Still memory leaks
+
+4. 

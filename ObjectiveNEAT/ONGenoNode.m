@@ -78,4 +78,8 @@
     return copiedGenoNode;
 }
 
+-(void) dealloc {
+    [super dealloc];
+}
+
 @end

@@ -39,6 +39,8 @@
     double sensorInputs[4][2] = {{0.0, 0.0}, {1.0, 0.0}, {0.0, 1.0}, {1.0, 1.0}};
     double finalOutput[4];
     
+    //int count = [[subject network] retainCount];
+    
     // to start with we're just going to run through the single genome
     for (int i = 0; i < 4; i++) {
         // load in the initial sensor data
@@ -49,7 +51,6 @@
         
         // now activate the network
         [subject.network activateNetwork];
-        
         ONPhenoNode * outputNode = [[subject.network outputNodes] lastObject];
         finalOutput[i] = outputNode.activationValue;
         
@@ -65,7 +66,7 @@
         (finalOutput[2] > 0.5) &&
         (finalOutput[3] < 0.5)) {
         NSLog(@"We've found a winner!!!!!!!!!!!!!!!!!!");
-        solutionOrganism = subject;
+        solutionOrganism = [subject copy];
         solutionFound = true;
     }
 }
@@ -77,6 +78,13 @@
     else {
         NSLog(@"Unable to find a solution in %d generations", thePopulation.generation);
     }
+}
+
+-(void) dealloc {
+    if (solutionOrganism != nil) {
+        [solutionOrganism release];
+    }
+    [super dealloc];
 }
 
 @end

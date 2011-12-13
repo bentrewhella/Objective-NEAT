@@ -67,6 +67,7 @@
             newPhenoNode.nodeType = nextGenoNode.nodeType;
             
             [allNodes addObject:newPhenoNode];
+            [newPhenoNode release];
             if (nextGenoNode.nodeType == INPUT) {
                 [inputNodes addObject:newPhenoNode];
             }
@@ -101,6 +102,7 @@
                 newPhenoLink.isEnabled = nextGenoLink.isEnabled;
                 
                 [allLinks addObject:newPhenoLink];
+                [newPhenoLink release];
                 numLinks++;
             }
         }
@@ -165,6 +167,18 @@
     return [NSString stringWithFormat: @"Nodes: %@ Links: %@",
             [allNodes description],
             [allLinks description]];   
+}
+
+-(void) dealloc {
+    
+    for (ONPhenoNode * nextNode in allNodes) {
+        [nextNode clearLinks];
+    }
+    [allLinks release];
+    [allNodes release];
+    [inputNodes release];
+    [outputNodes release];
+    [super dealloc];
 }
 
 

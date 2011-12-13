@@ -72,6 +72,7 @@ static ONInnovationDB * sharedInnovationDB;
     newInnovation.fromNodeID = fNode;
     newInnovation.toNodeID = tNode;
     [nodeRecord addObject:newInnovation];
+    [newInnovation release];
 }
 
 
@@ -91,6 +92,7 @@ static ONInnovationDB * sharedInnovationDB;
     newInnovation.fromNodeID = fNode;
     newInnovation.toNodeID = tNode;
     [linkInnovations addObject:newInnovation];
+    [newInnovation release];
 }
 
 
@@ -105,6 +107,12 @@ static ONInnovationDB * sharedInnovationDB;
 
 +(int) getNextInnovationID {
     return innovationCounter++;
+}
+
+-(void) dealloc {
+    [linkInnovations release];
+    [nodeRecord release];
+    [super dealloc];
 }
 
 +(ONInnovationDB *) sharedDB {
