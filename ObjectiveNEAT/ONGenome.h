@@ -155,6 +155,6 @@
  */
 -(double) similarityScoreWithGenome: (ONGenome *) otherGenome;
 
-
+double gaussrand();
 
 @end

@@ -1,7 +1,5 @@
-1.  Memory exception when clearing the population - upon releasing all organisms, need to check the reference counts for each
+1. Weights using gaussian
 
-2. Control population - is getting out of control quickly
+2. Still memory leaks
 
-3. Still memory leaks
-
-4. 
+3. 

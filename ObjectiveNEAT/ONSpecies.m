@@ -31,7 +31,7 @@
 #import "ONUtilities.h"
 
 @implementation ONSpecies
-@synthesize speciesOrganisms, fittestOrganism, speciesFitnessTotal, age, ageSinceImprovement;
+@synthesize speciesOrganisms, fittestOrganism, age, ageSinceImprovement;
 
 static int speciesCounter = 0;
 
@@ -43,7 +43,6 @@ static int speciesCounter = 0;
         speciesOrganisms = [[NSMutableArray alloc] init];
         age = 0;
         ageSinceImprovement = 0;
-        speciesFitnessTotal = 0.0;
     }
     return self;
 }
@@ -53,12 +52,14 @@ static int speciesCounter = 0;
     
     //modify fitness for young / old species
     if (age < [ONParameterController youngSpeciesAgeThreshold]) {
-        org.fitness *= [ONParameterController youngSpeciesFitnessBonus];
+        org.speciesAdjustedFitness = org.fitness * [ONParameterController youngSpeciesFitnessBonus];
     }
     else if (age > [ONParameterController oldSpeciesAgeThreshold]) {
-        org.fitness *= [ONParameterController oldSpeciesFitnessBonus];
+        org.speciesAdjustedFitness = org.fitness * [ONParameterController oldSpeciesFitnessBonus];
     }
-    speciesFitnessTotal += org.fitness;
+    else {
+        org.speciesAdjustedFitness = org.fitness;
+    }
     if (org.fitness > fittestOrganism.fitness) {
         [fittestOrganism release];
         fittestOrganism = [org copy];
@@ -71,7 +72,6 @@ static int speciesCounter = 0;
     [speciesOrganisms removeAllObjects];
     age++;
     ageSinceImprovement++;
-    speciesFitnessTotal = fittestOrganism.fitness;
 }
 
 -(bool) shouldIncludeOrganism:(ONOrganism *) org {
@@ -97,11 +97,12 @@ static int speciesCounter = 0;
 }
 
 -(double) numberToSpawnBasedOnAverageFitness: (double) averageFitness {
-    double numToSpawn = 0.0;
+    double sumSpeciesAdjustedFitness = 0.0;
     
     for (ONOrganism * nextOrganism in speciesOrganisms) {
-        numToSpawn += nextOrganism.fitness / averageFitness;
+        sumSpeciesAdjustedFitness += nextOrganism.speciesAdjustedFitness;
     }
+    double numToSpawn = sumSpeciesAdjustedFitness / averageFitness;
     return numToSpawn;
 }
 

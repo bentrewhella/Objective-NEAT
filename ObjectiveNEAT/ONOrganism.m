@@ -29,7 +29,7 @@
 #import "ONNetwork.h"
 
 @implementation ONOrganism
-@synthesize genome, fitness;
+@synthesize genome, fitness, speciesAdjustedFitness;
 
 
 - (id)initWithGenome: (ONGenome *) dna 
@@ -38,6 +38,7 @@
     if (self) {
         genome = [dna retain];
         fitness = 0;
+        speciesAdjustedFitness = 0;
     }
     return self;
 }

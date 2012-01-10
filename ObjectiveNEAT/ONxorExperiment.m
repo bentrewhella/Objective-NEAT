@@ -30,8 +30,8 @@
 @implementation ONxorExperiment
 
 -(ONGenome *) initialGenome {
-    //return [ONGenome createXORGenome];
     return [ONGenome createSimpleGenomeWithInputs:2 outputs:1];
+    //return [ONGenome createXORGenome]; 
 }
 
 -(void) evaluateOrganism: (ONOrganism *) subject {

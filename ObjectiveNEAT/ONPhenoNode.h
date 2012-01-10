@@ -139,5 +139,6 @@
  */ 
 double fsigmoid(double activesum, double slope, double constant);
 
+double gaussrand();
 
 @end

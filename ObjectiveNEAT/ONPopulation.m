@@ -53,8 +53,8 @@
     NSMutableArray * speciesToDestroy = [NSMutableArray array];
     for (ONSpecies * nextSpecies in allSpecies) {
         [nextSpecies clearAndAge];
-        if (nextSpecies.ageSinceImprovement > [ONParameterController speciesAgeSinceImprovementLimit] &&
-            nextSpecies.fittestOrganism.fitness < fittestOrganismEver.fitness) {
+        if (nextSpecies.ageSinceImprovement > [ONParameterController speciesAgeSinceImprovementLimit]) {
+            //&& nextSpecies.fittestOrganism.fitness < fittestOrganismEver.fitness) {
             [speciesToDestroy addObject:nextSpecies];
         }
     }
@@ -65,6 +65,7 @@
     
     
     double sumFitness = 0;
+    double sumAdjustedFitness = 0;
     for (ONOrganism * nextOrganism in allOrganisms) {
         bool foundSpecies = false;
         for (ONSpecies * nextSpecies in allSpecies) {
@@ -72,6 +73,7 @@
                 foundSpecies = true;
                 [nextSpecies addOrganism:nextOrganism];
                 sumFitness += nextOrganism.fitness;
+                sumAdjustedFitness += nextOrganism.speciesAdjustedFitness;
                 break;
             }
         }
@@ -80,6 +82,7 @@
             ONSpecies * newSpecies = [[ONSpecies alloc] init];
             [newSpecies addOrganism:nextOrganism];
             sumFitness += nextOrganism.fitness;
+            sumAdjustedFitness += nextOrganism.speciesAdjustedFitness;
             [allSpecies addObject:newSpecies];
             [newSpecies release];
         }
@@ -98,16 +101,27 @@
     [allSpecies removeObjectsInArray:speciesToDestroy];
     
     // create new species and add to the general population
-    double averageFitness = sumFitness / allOrganisms.count;
+    double averageFitness = sumAdjustedFitness / allOrganisms.count;
     
     // sort the entire population and find out if we have a new best
     [allOrganisms sortUsingSelector:@selector(compareFitnessWith:)];
     
     [allOrganisms removeAllObjects];
     for (ONSpecies * nextSpecies in allSpecies) {
-        // need to improve this so fitter species create more organisms
-        int numberToCreate = (int) [nextSpecies numberToSpawnBasedOnAverageFitness:averageFitness] + 1;
+        int numberToCreate = (int) [nextSpecies numberToSpawnBasedOnAverageFitness:averageFitness];
         NSArray * newGeneration = [nextSpecies spawnOrganisms:numberToCreate];
+        [allOrganisms addObjectsFromArray:newGeneration];
+        [newGeneration release];
+    }
+    // this was fixed 
+    int speciesIndex = 0;
+    for (int i = (int) [allOrganisms count] ; i < [ONParameterController populationSize]; i++) {
+        ONSpecies * nextSpecies = [allSpecies objectAtIndex:speciesIndex];
+        speciesIndex++;
+        if (speciesIndex <= [allSpecies count]) {
+            speciesIndex = 0;
+        }
+        NSArray * newGeneration = [nextSpecies spawnOrganisms:1];
         [allOrganisms addObjectsFromArray:newGeneration];
         [newGeneration release];
     }

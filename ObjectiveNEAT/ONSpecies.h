@@ -42,7 +42,7 @@
     int speciesID;
     NSMutableArray * speciesOrganisms;
     ONOrganism * fittestOrganism;
-    double speciesFitnessTotal;
+    //double speciesFitnessTotal;
     int age;
     int ageSinceImprovement;
 }
@@ -63,7 +63,7 @@
  * A convenience variable to store the total fitness within the species.
  * Used to work out how many organisms the species should reproduce.
  */
-@property double speciesFitnessTotal;
+//@property double speciesFitnessTotal;
 
 /**
  * The number of generations since the species first appeared.

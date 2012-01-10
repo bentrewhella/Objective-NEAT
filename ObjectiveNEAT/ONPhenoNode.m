@@ -102,6 +102,8 @@ double fsigmoid(double activesum, double slope, double constant) {
 	return (1/(1+(exp(-(slope*activesum))))); //Compressed
 }
 
+
+
 -(void) clearLinks {
     [incomingPhenoLinks release];
     incomingPhenoLinks = nil;

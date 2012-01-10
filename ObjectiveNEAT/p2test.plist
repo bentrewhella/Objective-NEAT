@@ -7,9 +7,9 @@
 	<key>population_size</key>
 	<integer>150</integer>
 	<key>num_generations</key>
-	<integer>300</integer>
+	<integer>1000</integer>
 	<key>mut_weight_max_perturbation</key>
-	<real>0.5</real>
+	<real>0.2</real>
 	<key>mut_weight_prob_replace</key>
 	<real>0.05</real>
 	<key>chance_mutate_weights</key>
@@ -25,9 +25,9 @@
 	<key>c3_weight_coefficient</key>
 	<real>0.4</real>
 	<key>species_compatibility_threshold</key>
-	<real>0.5</real>
+	<real>0.7</real>
 	<key>species_age_without_improvement_limit</key>
-	<integer>20</integer>
+	<integer>15</integer>
 	<key>chance_add_link</key>
 	<real>0.05</real>
 	<key>chance_add_node</key>
@@ -41,12 +41,12 @@
 	<key>young_species_age_threshold</key>
 	<integer>5</integer>
 	<key>young_species_fitness_bonus</key>
-	<real>1.2</real>
+	<integer>3</integer>
 	<key>old_species_age_threshold</key>
 	<integer>15</integer>
 	<key>old_species_fitness_penalty</key>
-	<real>0.8</real>
+	<real>0.5</real>
 	<key>random_seed</key>
-	<integer>3</integer>
+	<integer>0</integer>
 </dict>
 </plist>

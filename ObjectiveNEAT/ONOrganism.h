@@ -48,6 +48,7 @@
     ONNetwork * network;
     
     double fitness;
+    double speciesAdjustedFitness;
 }
 
 /** The genome of the organism - should be set with initialiser. */
@@ -59,6 +60,9 @@
 
 /** The fitness of the organism. */
 @property double fitness;
+
+/** The fitness of the organism adjusted for species age. */
+@property double speciesAdjustedFitness;
 
 /** Initialiser */
 - (id)initWithGenome: (ONGenome *) dna;
